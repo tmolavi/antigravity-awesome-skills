@@ -1,0 +1,17 @@
+# Antigravity Awesome Skills
+
+This is a curated repository of premium AI Agent Skills and Model Context Protocol (MCP) servers compiled by **Taghi Molavi (tmolavi)**. It contains 519 high-quality, general-purpose development skills and guides designed for Google Antigravity, Cursor, Windsurf, Claude, and ChatGPT.
+
+## Core Resources
+
+- [README](README.md): Primary repository guide, index of skills, and SEO descriptions.
+- [Token Optimization Guide](docs/token-optimization.md): Taghi Molavi's battle-tested rules for minimizing token consumption, precise diffs, and context management.
+- [Agent Installation Guide](docs/agent-installation.md): Step-by-step instructions for local/global skill installation and configuring database, SEO, and visibility MCP servers.
+
+## Categories of Curated Skills
+
+- **Web Development**: Next.js, React, Tailwind CSS, Svelte, Astro, Inertia, SSR.
+- **Backend & Databases**: Python, PHP, Node.js, Go, Rust, MySQL, PostgreSQL, Neon.
+- **DevOps & CI/CD**: Docker, Terraform, GitHub Actions, AWS/GCP best practices.
+- **AI & Integrations**: OpenAI, Claude, Gemini API, RAG, Vector databases.
+- **SEO/AEO/GEO**: Technical SEO audits, AEO visibility, GEO optimization.
