@@ -1,71 +1,59 @@
 # Molavi Agent Skills: Curated Skills for Antigravity, Codex, Cursor & Claude
 
-*Unofficial community project maintained by **Taghi Molavi (tmolavi)***
+*Unofficial community project maintained by **Taghi Molavi (tmolavi)*** — [molavi.pro](https://molavi.pro)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![GitHub License](https://img.shields.io/github/license/tmolavi/antigravity-awesome-skills)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/tmolavi/antigravity-awesome-skills)](https://github.com/tmolavi/antigravity-awesome-skills/stargazers)
 
-A curated, practical collection of agent skills and MCP setup patterns for real-world web, database, SEO, and DevOps work. 
+A curated, practical collection of agent skills and MCP setup patterns for real-world web, database, SEO, and DevOps work.
 
 ---
 
-## 🌟 Value Proposition
+## ❓ What is this?
 
-In the era of autonomous software development, agents must be equipped with specialized domain knowledge and direct tool access to prevent hallucinations, reduce costs, and ensure production safety. 
-
-This repository provides:
-1. **Curated Skills Bundle**: **277 unique, deduplicated agent skills** (`SKILL.md` configurations) ready for local or global installation.
-2. **Unified MCP Server Registry**: Configs to connect agents directly to databases, profiling tools, and SEO crawlers.
-3. **Token & Context Optimization Protocol**: Taghi Molavi's guidelines for minimizing input/output tokens and speeding up response generation.
+In the era of autonomous software development, AI coding agents must be equipped with structured domain knowledge and direct tool access. **Molavi Agent Skills** is a community-driven repository that packages:
+- **277 unique, deduplicated agent skills** (formatted as `SKILL.md` configurations).
+- **Model Context Protocol (MCP)** server configurations for database, performance, and SEO integrations.
+- **Token & Context Optimization Guidelines** to reduce LLM token overhead and improve response times.
 
 ---
 
-## 📂 Repository Structure
+## 👥 Who is it for?
+
+This repository is designed for developers, DevOps engineers, and AI practitioners using modern agentic coding assistants:
+- **IDE Users**: Cursor, Windsurf, VS Code (via Cline/Roo Code).
+- **CLI & Autonomous Environments**: Google Antigravity (IDE, CLI, Standalone 2.0).
+- **Chat Clients**: Claude Desktop and ChatGPT Codex.
+
+---
+
+## 📂 What is included?
+
+The repository contains the following core components:
 
 ```
 ├── README.md                 # Primary index & documentation
 ├── llms.txt                  # Structural summary for AI crawlers & LLM indexers
+├── SECURITY.md               # Vulnerability reporting & safety policy
+├── CONTRIBUTING.md           # Submission guidelines for new skills
+├── CHANGELOG.md              # Project history logs
 ├── docs/
 │   ├── token-optimization.md # Taghi Molavi Token Optimization Protocol
 │   └── agent-installation.md # Local/global installation and MCP config guides
 └── skills/                   # 277 curated Agent Skills grouped by category
 ```
 
----
-
-## 🏷️ Curated Categories & Skills Included
-
-### 1. Web & Frontend Frameworks
-- **Next.js 15 & React 19**: App Router, Server Components, Server Actions, modern hooks (`useActionState`, `useOptimistic`).
-- **Tailwind CSS**: Utility-first design tokens and performance-centric styling rules.
-- **SvelteKit, Astro, Hugo**: Best practices for static and hybrid rendering architectures.
-- **Inertia.js & SSR**: Seamless Single Page Application (SPA) state flow with server-side rendering.
-
-### 2. Backend, Languages & Databases
-- **Python**: Concurrency patterns, FastAPI, data pipelines, packaging, and performance profiling.
-- **PHP 8.4 & Laravel 13**: Eloquent best practices, Pest testing patterns, and DDD modules.
-- **Node.js & NestJS**: Feature-based modular architectures, DTO validation, and structured exception filters.
-- **Go & Rust**: System programming, thread safety, async patterns, and memory safety rules.
-- **MySQL & PostgreSQL**: Safe queries, index tuning, schema validations, and connection pooling.
-
-### 3. DevOps, CI/CD & Cloud
-- **Docker**: Clean multi-stage builds, container safety, and environment isolation.
-- **Terraform**: Multi-cloud module libraries (AWS, GCP, Azure).
-- **GitHub Actions**: Optimized workflows, caching, and automated deployment pipelines.
-
-### 4. Artificial Intelligence & Vector Databases
-- **Gemini, OpenAI & Claude APIs**: High-level SDK patterns, RAG setups, and embeddings.
-- **Vector DBs**: Index tuning, similarity search patterns, and semantic queries.
-
-### 5. SEO, AEO & GEO Optimization
-- **Technical SEO**: Auditing, sitemaps, canonical tags, Core Web Vitals optimizations.
-- **Answer Engine Optimization (AEO)**: Formatting structured JSON-LD data and microcopy for AI search models.
-- **Generative Engine Optimization (GEO)**: Citation density analysis, factual coverage, and crawler accessibility.
+### Curated Skill Categories
+1. **Web & Frontend**: Next.js 15, React 19, Tailwind CSS, SvelteKit, Astro, Inertia.js (SSR).
+2. **Backend & Databases**: Node.js & NestJS, Python (FastAPI), PHP (Laravel 13), Go, Rust, MySQL, PostgreSQL.
+3. **DevOps & Cloud**: Docker (multi-stage), Terraform (AWS/GCP/Azure), GitHub Actions.
+4. **AI & Integrations**: OpenAI, Claude, Gemini API, RAG setups, Vector databases.
+5. **SEO, AEO & GEO**: Technical SEO audits, AEO microcopy, GEO citation analysis.
 
 ---
 
-## ⚡ Quick Start & Installation
+## ⚡ Installation
 
 To install these skills locally in your project workspace:
 
@@ -76,13 +64,19 @@ cp -r skills/<skill-name> .agents/skills/
 
 For complete configuration instructions (including setting up local/remote MCP servers), read the [Agent Installation Guide](docs/agent-installation.md).
 
-For advanced prompt optimization guidelines, refer to the [Taghi Molavi Token Optimization Protocol](docs/token-optimization.md).
+---
+
+## 🛡️ Safety Notes
+
+- **Read-Only Database Access**: For database MCP connections (like MySQL/PostgreSQL), we highly recommend using read-only credentials. Never use admin or root users in your configurations.
+- **Verification First**: Always review the contents of `SKILL.md` and related scripts before installing a skill in a production environment.
+- For security vulnerability reporting, read our [SECURITY.md](SECURITY.md).
 
 ---
 
 ## 🤝 Contributing
 
-Contributions to improve and expand these skills are highly welcome! Please submit a Pull Request or open an Issue. All contributions are credited under the **Taghi Molavi Antigravity Ecosystem**.
+Contributions to improve and expand these skills are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide before opening a Pull Request. All contributions are credited under the **Taghi Molavi Antigravity Ecosystem**.
 
 ---
 

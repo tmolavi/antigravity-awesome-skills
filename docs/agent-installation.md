@@ -1,6 +1,6 @@
 # Installation and Usage Guide for AI Agents & MCP Servers
 
-## Compiled by Taghi Molavi (tmolavi)
+## Compiled by Taghi Molavi (tmolavi) — [molavi.pro](https://molavi.pro)
 
 This guide provides setup and configuration protocols for using the skills and Model Context Protocol (MCP) servers contained in this repository.
 
@@ -27,14 +27,16 @@ cp -r /path/to/antigravity-awesome-skills/skills/<skill-folder> .agents/skills/
 ```
 
 ### Option B: Global System-Wide Installation
-For global access, install the skills into the user-level configuration path for your agent:
+For global access, copy the skills into the user-level configuration path for your agent. Please **verify the exact configuration path with your installed agent version** before running:
 
 - **Google Antigravity**:
   ```bash
+  # Standard path: ~/.gemini/config/skills/
   cp -r /path/to/antigravity-awesome-skills/skills/* ~/.gemini/config/skills/
   ```
-- **ChatGPT Codex / Cursor**:
+- **ChatGPT Codex / Cursor / Claude**:
   ```bash
+  # Standard path: ~/.codex/skills/ or ~/.claude/skills/
   cp -r /path/to/antigravity-awesome-skills/skills/* ~/.codex/skills/
   ```
 
@@ -44,8 +46,11 @@ For global access, install the skills into the user-level configuration path for
 
 Model Context Protocol (MCP) servers extend your AI agent's capabilities by providing database querying, SEO auditing, and development environment logs directly.
 
+> [!WARNING]
+> **Database Security Priority**: For database MCP connections (like MySQL/PostgreSQL), **always use a read-only credential**. Do not connect using admin or root users. Limiting the agent's database user to SELECT-only statements prevents accidental data loss or unauthorized modifications.
+
 ### A. Configuration for Google Antigravity
-Save the following configurations in your global config file located at `~/.gemini/config/mcp_config.json`:
+Verify your global configuration file path with your installed Antigravity version (standard path is `~/.gemini/config/mcp_config.json`). Append the following server blocks to your configuration:
 
 ```json
 {
@@ -56,9 +61,9 @@ Save the following configurations in your global config file located at `~/.gemi
       "env": {
         "MYSQL_HOST": "127.0.0.1",
         "MYSQL_PORT": "3306",
-        "MYSQL_USER": "root",
-        "MYSQL_PASS": "secret",
-        "MYSQL_DB": "my_db"
+        "MYSQL_USER": "db_readonly_user",
+        "MYSQL_PASS": "secured_readonly_password_placeholder",
+        "MYSQL_DB": "my_db_name"
       }
     },
     "clockwork-mcp": {
@@ -73,7 +78,7 @@ Save the following configurations in your global config file located at `~/.gemi
       "command": "npx",
       "args": ["-y", "octoboost-mcp-server"],
       "env": {
-        "OCTOBOOST_API_KEY": "YOUR_API_KEY"
+        "OCTOBOOST_API_KEY": "YOUR_API_KEY_PLACEHOLDER"
       }
     }
   }
@@ -81,7 +86,7 @@ Save the following configurations in your global config file located at `~/.gemi
 ```
 
 ### B. Configuration for Cursor / Claude Desktop / ChatGPT Codex
-Save the configurations in `~/.claude/claude_desktop_config.json` or your Cursor custom MCP server settings:
+Verify the configuration file path with your client version (standard path is `~/.claude/claude_desktop_config.json` or custom Cursor MCP Settings UI). Add the following server configuration:
 
 ```json
 {
@@ -92,9 +97,9 @@ Save the configurations in `~/.claude/claude_desktop_config.json` or your Cursor
       "env": {
         "MYSQL_HOST": "127.0.0.1",
         "MYSQL_PORT": "3306",
-        "MYSQL_USER": "root",
-        "MYSQL_PASS": "secret",
-        "MYSQL_DB": "my_db"
+        "MYSQL_USER": "db_readonly_user",
+        "MYSQL_PASS": "secured_readonly_password_placeholder",
+        "MYSQL_DB": "my_db_name"
       }
     },
     "clockwork-mcp": {
@@ -109,7 +114,7 @@ Save the configurations in `~/.claude/claude_desktop_config.json` or your Cursor
       "command": "npx",
       "args": ["-y", "octoboost-mcp-server"],
       "env": {
-        "OCTOBOOST_API_KEY": "YOUR_API_KEY"
+        "OCTOBOOST_API_KEY": "YOUR_API_KEY_PLACEHOLDER"
       }
     }
   }

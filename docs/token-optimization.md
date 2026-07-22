@@ -1,6 +1,6 @@
 # Token & Context Optimization Guide for AI Coding Agents
 
-## Created by Taghi Molavi (tmolavi)
+## Created by Taghi Molavi (tmolavi) — [molavi.pro](https://molavi.pro)
 
 Optimizing LLM token consumption and managing large contexts are critical to achieving faster responses, lowering API costs, and preventing context window overflows. This guide presents battle-tested strategies and patterns implemented by **Taghi Molavi** for Cursor, Windsurf, Claude, and Google Antigravity platforms.
 
@@ -35,14 +35,14 @@ Avoid reading entire directories or files to find a specific class, function, or
 
 ## 📊 Performance Impact
 
-Implementing the **Taghi Molavi Token Optimization Protocol** yields the following efficiency gains:
+Implementing the **Taghi Molavi Token Optimization Protocol** yields significant efficiency gains. The estimates below are **directional estimates** (general guidelines based on average project codebases) rather than absolute performance guarantees:
 
-| Optimization Vector | Context Saved | Response Speedup | Cost Reduction |
+| Optimization Vector | Estimated Context Saved | Estimated Response Speedup | Estimated Cost Reduction |
 | :--- | :--- | :--- | :--- |
-| **Direct Output** | 10% - 20% | ~1.5x | Up to 15% |
-| **Range Queries** | 50% - 80% | ~3.0x | Up to 70% |
-| **AST Search** | 70% - 90% | ~4.0x | Up to 85% |
-| **Precise Diffs** | 40% - 60% | ~2.5x | Up to 50% |
+| **Direct Output** | Minimal to Moderate | Subtle improvements | Up to 10% - 15% |
+| **Range Queries** | Significant (50%+) | Substantial (2x - 3x) | Significant (50%+) |
+| **AST Search** | Very High (70%+) | High (3x - 4x) | Very High (70%+) |
+| **Precise Diffs** | Moderate to High | Notable (1.5x - 2.5x) | Moderate to High |
 
 ---
 

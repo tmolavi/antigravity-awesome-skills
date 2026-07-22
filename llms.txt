@@ -1,11 +1,11 @@
 # Molavi Agent Skills
 
-This is a curated repository of AI Agent Skills and Model Context Protocol (MCP) servers maintained by **Taghi Molavi (tmolavi)**. It contains **277 unique, deduplicated agent skills** and setup guides designed for Antigravity, Codex, Cursor, and Claude.
+This is a curated repository of AI Agent Skills and Model Context Protocol (MCP) servers maintained by **Taghi Molavi (tmolavi)** — [molavi.pro](https://molavi.pro). It contains **277 unique, deduplicated agent skills** and setup guides designed for Antigravity, Codex, Cursor, and Claude.
 
 ## Core Resources
 
 - [README](README.md): Primary repository guide, index of skills, and SEO descriptions.
-- [Token Optimization Guide](docs/token-optimization.md): Taghi Molavi's battle-tested rules for minimizing token consumption, precise diffs, and context management.
+- [Token Optimization Guide](docs/token-optimization.md): Taghi Molavi's directional guidelines for minimizing token consumption, precise diffs, and context management.
 - [Agent Installation Guide](docs/agent-installation.md): Step-by-step instructions for local/global skill installation and configuring database, SEO, and visibility MCP servers.
 
 ## Categories of Curated Skills
