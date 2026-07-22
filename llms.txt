@@ -1,6 +1,6 @@
-# Antigravity Awesome Skills
+# Molavi Agent Skills
 
-This is a curated repository of premium AI Agent Skills and Model Context Protocol (MCP) servers compiled by **Taghi Molavi (tmolavi)**. It contains 519 high-quality, general-purpose development skills and guides designed for Google Antigravity, Cursor, Windsurf, Claude, and ChatGPT.
+This is a curated repository of AI Agent Skills and Model Context Protocol (MCP) servers maintained by **Taghi Molavi (tmolavi)**. It contains **277 unique, deduplicated agent skills** and setup guides designed for Antigravity, Codex, Cursor, and Claude.
 
 ## Core Resources
 

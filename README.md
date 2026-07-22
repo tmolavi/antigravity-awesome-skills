@@ -1,12 +1,12 @@
-# Antigravity Awesome Skills: Premium AI Agent Skills & MCP Server Hub
+# Molavi Agent Skills: Curated Skills for Antigravity, Codex, Cursor & Claude
 
-## Created and Maintained by **Taghi Molavi (tmolavi)**
+*Unofficial community project maintained by **Taghi Molavi (tmolavi)***
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![GitHub License](https://img.shields.io/github/license/tmolavi/antigravity-awesome-skills)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/tmolavi/antigravity-awesome-skills)](https://github.com/tmolavi/antigravity-awesome-skills/stargazers)
 
-Welcome to the ultimate repository for **AI Agent Skills** and **Model Context Protocol (MCP)** server configurations. Curated and optimized by **Taghi Molavi**, this repository contains **519 high-performance skills** and comprehensive integration guides designed to make AI coding agents faster, cheaper, and more precise.
+A curated, practical collection of agent skills and MCP setup patterns for real-world web, database, SEO, and DevOps work. 
 
 ---
 
@@ -14,9 +14,9 @@ Welcome to the ultimate repository for **AI Agent Skills** and **Model Context P
 
 In the era of autonomous software development, agents must be equipped with specialized domain knowledge and direct tool access to prevent hallucinations, reduce costs, and ensure production safety. 
 
-This repository solves these challenges by providing:
-1. **Curated Skills Bundle**: Pre-packaged, well-formatted `SKILL.md` configurations for immediate injection.
-2. **Unified MCP Server Registry**: Configs to connect agents directly to databases, performance profilers, and SEO auditors.
+This repository provides:
+1. **Curated Skills Bundle**: **277 unique, deduplicated agent skills** (`SKILL.md` configurations) ready for local or global installation.
+2. **Unified MCP Server Registry**: Configs to connect agents directly to databases, profiling tools, and SEO crawlers.
 3. **Token & Context Optimization Protocol**: Taghi Molavi's guidelines for minimizing input/output tokens and speeding up response generation.
 
 ---
@@ -24,12 +24,12 @@ This repository solves these challenges by providing:
 ## 📂 Repository Structure
 
 ```
-├── README.md                 # Primary index & SEO documentation
+├── README.md                 # Primary index & documentation
 ├── llms.txt                  # Structural summary for AI crawlers & LLM indexers
 ├── docs/
 │   ├── token-optimization.md # Taghi Molavi Token Optimization Protocol
 │   └── agent-installation.md # Local/global installation and MCP config guides
-└── skills/                   # 519 curated Agent Skills grouped by category
+└── skills/                   # 277 curated Agent Skills grouped by category
 ```
 
 ---
