@@ -1,6 +1,6 @@
 # Installation and Usage Guide for AI Agents & MCP Servers
 
-## Compiled by Taghi Molavi (tmolavi) — [molavi.pro](https://molavi.pro)
+Maintained by [Taghi Molavi](https://molavi.pro)
 
 This guide provides setup and configuration protocols for using the skills and Model Context Protocol (MCP) servers contained in this repository.
 
@@ -8,7 +8,8 @@ This guide provides setup and configuration protocols for using the skills and M
 
 ## 🛠️ Supporting Platforms & IDEs
 
-The skills and servers in this repository are designed to work seamlessly with the following AI platforms and editors:
+The skills and servers in this repository are designed to work with the following AI platforms and editors. **Exact configuration paths vary by version and OS — verify with your installed client version before applying.**
+
 - **Google Antigravity** (IDE, CLI, and Standalone version 2.0)
 - **Cursor** & **Windsurf** (VS Code-based AI code editors)
 - **Claude Desktop** & **ChatGPT Codex**
@@ -19,7 +20,8 @@ The skills and servers in this repository are designed to work seamlessly with t
 ## 📂 1. Setting Up Agent Skills
 
 ### Option A: Local Workspace Installation (Recommended)
-Place the required skills directly in your project root under the `.agents/skills/` directory.
+
+Place the required skills directly in your project root under the `.agents/skills/` directory:
 
 ```bash
 mkdir -p .agents/skills/
@@ -27,16 +29,18 @@ cp -r /path/to/antigravity-awesome-skills/skills/<skill-folder> .agents/skills/
 ```
 
 ### Option B: Global System-Wide Installation
-For global access, copy the skills into the user-level configuration path for your agent. Please **verify the exact configuration path with your installed agent version** before running:
 
-- **Google Antigravity**:
+For global access, copy the skills into the user-level configuration path for your agent. **Verify the exact configuration path with your installed agent version before running.**
+
+- **Google Antigravity** (standard path — verify with your installed version):
   ```bash
-  # Standard path: ~/.gemini/config/skills/
   cp -r /path/to/antigravity-awesome-skills/skills/* ~/.gemini/config/skills/
   ```
-- **ChatGPT Codex / Cursor / Claude**:
+
+- **ChatGPT Codex / Cursor / Claude** (standard paths — verify with your installed version):
   ```bash
-  # Standard path: ~/.codex/skills/ or ~/.claude/skills/
+  # Codex: ~/.codex/skills/
+  # Claude: ~/.claude/skills/
   cp -r /path/to/antigravity-awesome-skills/skills/* ~/.codex/skills/
   ```
 
@@ -44,13 +48,14 @@ For global access, copy the skills into the user-level configuration path for yo
 
 ## 🔌 2. Configuring MCP Servers
 
-Model Context Protocol (MCP) servers extend your AI agent's capabilities by providing database querying, SEO auditing, and development environment logs directly.
+Model Context Protocol (MCP) servers extend your AI agent's capabilities by providing database querying, SEO auditing, and development environment logs.
 
 > [!WARNING]
-> **Database Security Priority**: For database MCP connections (like MySQL/PostgreSQL), **always use a read-only credential**. Do not connect using admin or root users. Limiting the agent's database user to SELECT-only statements prevents accidental data loss or unauthorized modifications.
+> **Database Security — Read-Only First**: For all database MCP connections (MySQL, PostgreSQL, etc.), **always start with a read-only credential**. Never connect using admin or root users as your default agent user. Prefer read-only credentials and test on staging before connecting to any production database. Limiting the agent's database user to `SELECT`-only statements prevents accidental data loss or unauthorized modifications.
 
 ### A. Configuration for Google Antigravity
-Verify your global configuration file path with your installed Antigravity version (standard path is `~/.gemini/config/mcp_config.json`). Append the following server blocks to your configuration:
+
+Verify your global configuration file path with your installed Antigravity version (standard path is `~/.gemini/config/mcp_config.json` — verify with your installed client version). Append the following server blocks to your configuration:
 
 ```json
 {
@@ -62,8 +67,8 @@ Verify your global configuration file path with your installed Antigravity versi
         "MYSQL_HOST": "127.0.0.1",
         "MYSQL_PORT": "3306",
         "MYSQL_USER": "db_readonly_user",
-        "MYSQL_PASS": "secured_readonly_password_placeholder",
-        "MYSQL_DB": "my_db_name"
+        "MYSQL_PASS": "REPLACE_WITH_YOUR_READONLY_PASSWORD",
+        "MYSQL_DB": "your_database_name"
       }
     },
     "clockwork-mcp": {
@@ -86,7 +91,8 @@ Verify your global configuration file path with your installed Antigravity versi
 ```
 
 ### B. Configuration for Cursor / Claude Desktop / ChatGPT Codex
-Verify the configuration file path with your client version (standard path is `~/.claude/claude_desktop_config.json` or custom Cursor MCP Settings UI). Add the following server configuration:
+
+Verify the configuration file path with your client version (standard path is `~/.claude/claude_desktop_config.json` or Cursor MCP Settings UI — verify with your installed client version). Add the following:
 
 ```json
 {
@@ -98,8 +104,8 @@ Verify the configuration file path with your client version (standard path is `~
         "MYSQL_HOST": "127.0.0.1",
         "MYSQL_PORT": "3306",
         "MYSQL_USER": "db_readonly_user",
-        "MYSQL_PASS": "secured_readonly_password_placeholder",
-        "MYSQL_DB": "my_db_name"
+        "MYSQL_PASS": "REPLACE_WITH_YOUR_READONLY_PASSWORD",
+        "MYSQL_DB": "your_database_name"
       }
     },
     "clockwork-mcp": {
@@ -125,7 +131,8 @@ Verify the configuration file path with your client version (standard path is `~
 
 ## 🎯 Verification
 
-To verify that your skills and MCP servers are running successfully:
-- **Antigravity CLI**: Run `agy` and type `/mcp` to list active connections.
+To verify that your skills and MCP servers are active:
+
+- **Antigravity CLI**: Run `agy` and type `/mcp` to list active connections (verify command with your installed version).
 - **Cursor**: Go to `Settings > Features > MCP` to check the status of configured servers.
-- **Claude Desktop**: Restart the app and look for the electrical plug icon in the input box.
+- **Claude Desktop**: Restart the app and look for the plug icon in the input box.
