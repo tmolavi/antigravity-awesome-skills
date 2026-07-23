@@ -1,95 +1,355 @@
-# Molavi Agent Skills: Curated Skills for Antigravity, Codex, Cursor & Claude
+# Molavi Agent Skills: Curated Skills for Antigravity, Cursor, Codex & Claude
 
 Maintained by [Taghi Molavi](https://molavi.pro) · [GitHub](https://github.com/tmolavi/antigravity-awesome-skills)
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![GitHub License](https://img.shields.io/github/license/tmolavi/antigravity-awesome-skills)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/tmolavi/antigravity-awesome-skills)](https://github.com/tmolavi/antigravity-awesome-skills/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![GitHub Stars](https://img.shields.io/github/stars/tmolavi/antigravity-awesome-skills.svg?style=social)](https://github.com/tmolavi/antigravity-awesome-skills/stargazers)
 
-A curated, practical collection of agent skills and MCP setup patterns for real-world web, database, SEO, and DevOps work.
-
----
-
-## ❓ What is this?
-
-In the era of autonomous software development, AI coding agents need structured domain knowledge and safe tool access. **Molavi Agent Skills** is a community-curated repository that packages:
-
-- **277 unique, deduplicated agent skills** (formatted as `SKILL.md` configurations).
-- **Model Context Protocol (MCP)** server configurations for database, performance, and SEO integrations.
-- **Token & Context Optimization Guidelines** to reduce LLM token overhead and improve response times.
+A curated, practical collection of agent skills and Model Context Protocol (MCP) server setups designed for real-world web, database, SEO, and DevOps work.
 
 ---
 
-## 💡 Why this repository exists
+## ❓ Overview
 
-Most agentic skill collections focus on feature coverage. This one focuses on three practical concerns:
+In the era of autonomous software development, AI coding agents (such as Google Antigravity, Cursor, Windsurf, Claude, and ChatGPT Codex) need structured domain knowledge and direct tool access to perform complex coding operations reliably.
 
-1. **Safer MCP usage** — database MCP configs default to read-only credentials; destructive defaults are explicitly flagged.
-2. **Token & context discipline** — guidelines for range reads, AST-first search, and precise diffs to keep agent sessions efficient.
-3. **Practical agent workflows** — skills are written to be triggered, not just read. Each includes a clear description of when and why to invoke it.
+This repository provides **277 unique, deduplicated agent skills** packaged as `.skill` configurations (using the standard Markdown format with YAML frontmatter). These files instruct AI agents on exactly when to trigger a skill, what context/rules to follow, how to use tools, and how to verify their actions.
 
----
-
-## 👥 Who is it for?
-
-This repository is designed for developers, DevOps engineers, and AI practitioners using modern agentic coding assistants:
-
-- **IDE Users**: Cursor, Windsurf, VS Code (via Cline/Roo Code).
-- **CLI & Autonomous Environments**: Google Antigravity (IDE, CLI, Standalone 2.0).
-- **Chat Clients**: Claude Desktop and ChatGPT Codex.
+By utilizing these skills, you can:
+- **Minimize token overhead**: Built-in instructions guide agents to use range reads, precise diffs, and ignore files.
+- **Ensure safety**: Database MCP configs default to read-only credentials; destructive operations are heavily guarded.
+- **Enhance code quality**: Enforces strict styling, architecture constraints, and testing protocols for React 19, Next.js 15, FastAPI, Node.js, and more.
 
 ---
 
-## 📂 What is included?
+## ⚡ Features & Quick Start
 
-```
-├── README.md                          # Primary index & documentation
-├── llms.txt                           # Structural summary for AI crawlers & LLM indexers
-├── SECURITY.md                        # Vulnerability reporting & safety policy
-├── CONTRIBUTING.md                    # Submission guidelines for new skills
-├── CHANGELOG.md                       # Project history logs
-├── docs/
-│   ├── token-optimization.md          # Token & context optimization patterns
-│   ├── agent-installation.md          # Local/global installation and MCP config guides
-│   └── skill-quality-checklist.md     # Checklist for contributors adding new skills
-└── skills/                            # 277 curated Agent Skills grouped by category
-```
+### Core Features
+- **Modern Tech Stack**: Curated skills for React 19, Next.js 15 App Router, FastAPI, NestJS, Tailwind v4, Astro, Laravel, Go, and Rust.
+- **Advanced DevOps**: Configs for Docker, Terraform, GitHub Actions, and cloud deployment pipelines (AWS, GCP, Azure).
+- **SEO/AEO/GEO Auditing**: Pre-packaged skills for technical SEO audits, AI visibility, and search optimization.
+- **Safety First**: Staging warnings, strict credential boundaries, and explicit read-only rules.
 
-### Curated Skill Categories
-
-1. **Web & Frontend**: Next.js 15, React 19, Tailwind CSS, SvelteKit, Astro, Inertia.js (SSR).
-2. **Backend & Databases**: Node.js & NestJS, Python (FastAPI), PHP (Laravel 13), Go, Rust, MySQL, PostgreSQL.
-3. **DevOps & Cloud**: Docker (multi-stage), Terraform (AWS/GCP/Azure), GitHub Actions.
-4. **AI & Integrations**: OpenAI, Claude, Gemini API, RAG setups, Vector databases.
-5. **SEO, AEO & GEO**: Technical SEO audits, AEO microcopy, GEO citation analysis.
-
----
-
-## ⚡ Installation
-
+### Quick Start
 To install these skills locally in your project workspace:
 
-```bash
-mkdir -p .agents/skills/
-cp -r skills/<skill-name> .agents/skills/
-```
+1. **Create the skills directory** in your project root:
+   ```bash
+   mkdir -p .agents/skills/
+   ```
+2. **Copy the desired skill folder** into it:
+   ```bash
+   cp -r /path/to/antigravity-awesome-skills/skills/<skill-name> .agents/skills/
+   ```
+3. Your AI agent (e.g., Antigravity, Cursor) will automatically discover and load the rules in `SKILL.md` when it matches the context.
 
-For complete configuration instructions (including setting up local/remote MCP servers), read the [Agent Installation Guide](docs/agent-installation.md).
+For global installation or MCP server setups, check the [Agent Installation Guide](docs/agent-installation.md).
 
 ---
 
-## 🛡️ Safety Notes
+## 📊 List of Available Skills
+
+Below is a complete, automatically indexed table of all 277 skills available in this repository:
+
+| Skill Name | Category | Description | Path |
+| :--- | :--- | :--- | :--- |
+| **claude-api** | AI & LLM | Build apps with the Claude API or Anthropic SDK. TRIGGER when: code imports `anthropic`/`@anthropic-ai/sdk`/`claude_agent_sdk`, or user asks to use Cl... | [`skills/claude-api/SKILL.md`](skills/claude-api/SKILL.md) |
+| **gemini-api-dev** | AI & LLM | The Gemini API provides access to Google's most advanced AI models. Key capabilities include: | [`skills/gemini-api-dev/SKILL.md`](skills/gemini-api-dev/SKILL.md) |
+| **gemini-api-integration** | AI & LLM | Use when integrating Google Gemini API into projects. Covers model selection, multimodal inputs, streaming, function calling, and production best prac... | [`skills/gemini-api-integration/SKILL.md`](skills/gemini-api-integration/SKILL.md) |
+| **llm-application-dev-prompt-optimize** | AI & LLM | You are an expert prompt engineer specializing in crafting effective prompts for LLMs through advanced techniques including constitutional AI, chain-o... | [`skills/llm-application-dev-prompt-optimize/SKILL.md`](skills/llm-application-dev-prompt-optimize/SKILL.md) |
+| **llm-prompt-optimizer** | AI & LLM | Use when improving prompts for any LLM. Applies proven prompt engineering techniques to boost output quality, reduce hallucinations, and cut token usa... | [`skills/llm-prompt-optimizer/SKILL.md`](skills/llm-prompt-optimizer/SKILL.md) |
+| **performance-testing-review-ai-review** | AI & LLM | You are an expert AI-powered code review specialist combining automated static analysis, intelligent pattern recognition, and modern DevOps practices.... | [`skills/performance-testing-review-ai-review/SKILL.md`](skills/performance-testing-review-ai-review/SKILL.md) |
+| **zipai-optimizer** | AI & LLM | Adaptive token optimizer: intelligent filtering, surgical output, ambiguity-first, context-window-aware, VCS-aware, MCP-aware. | [`skills/zipai-optimizer/SKILL.md`](skills/zipai-optimizer/SKILL.md) |
+| **akf-trust-metadata** | Backend & Languages | The AI native file format. EXIF for AI — stamps every file with trust scores, source provenance, and compliance metadata. Embeds into 20+ formats (DOC... | [`skills/akf-trust-metadata/SKILL.md`](skills/akf-trust-metadata/SKILL.md) |
+| **async-python-patterns** | Backend & Languages | Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use when building async APIs, concurrent sy... | [`skills/async-python-patterns/SKILL.md`](skills/async-python-patterns/SKILL.md) |
+| **azure-cosmos-rust** | Backend & Languages | Azure Cosmos DB SDK for Rust (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. | [`skills/azure-cosmos-rust/SKILL.md`](skills/azure-cosmos-rust/SKILL.md) |
+| **azure-eventhub-rust** | Backend & Languages | Azure Event Hubs SDK for Rust. Use for sending and receiving events, streaming data ingestion. | [`skills/azure-eventhub-rust/SKILL.md`](skills/azure-eventhub-rust/SKILL.md) |
+| **azure-identity-rust** | Backend & Languages | Azure Identity SDK for Rust authentication. Use for DeveloperToolsCredential, ManagedIdentityCredential, ClientSecretCredential, and token-based authe... | [`skills/azure-identity-rust/SKILL.md`](skills/azure-identity-rust/SKILL.md) |
+| **azure-keyvault-certificates-rust** | Backend & Languages | Azure Key Vault Certificates SDK for Rust. Use for creating, importing, and managing certificates. | [`skills/azure-keyvault-certificates-rust/SKILL.md`](skills/azure-keyvault-certificates-rust/SKILL.md) |
+| **azure-keyvault-keys-rust** | Backend & Languages | Azure Key Vault Keys SDK for Rust. Use for creating, managing, and using cryptographic keys. Triggers: "keyvault keys rust", "KeyClient rust", "create... | [`skills/azure-keyvault-keys-rust/SKILL.md`](skills/azure-keyvault-keys-rust/SKILL.md) |
+| **azure-keyvault-secrets-rust** | Backend & Languages | Azure Key Vault Secrets SDK for Rust. Use for storing and retrieving secrets, passwords, and API keys. Triggers: "keyvault secrets rust", "SecretClien... | [`skills/azure-keyvault-secrets-rust/SKILL.md`](skills/azure-keyvault-secrets-rust/SKILL.md) |
+| **azure-storage-blob-rust** | Backend & Languages | Azure Blob Storage SDK for Rust. Use for uploading, downloading, and managing blobs and containers. | [`skills/azure-storage-blob-rust/SKILL.md`](skills/azure-storage-blob-rust/SKILL.md) |
+| **backend-security-coder** | Backend & Languages | Expert in secure backend coding practices specializing in input | [`skills/backend-security-coder/SKILL.md`](skills/backend-security-coder/SKILL.md) |
+| **biopython** | Backend & Languages | Biopython is a comprehensive set of freely available Python tools for biological computation. It provides functionality for sequence manipulation, fil... | [`skills/biopython/SKILL.md`](skills/biopython/SKILL.md) |
+| **dbos-golang** | Backend & Languages | Guide for building reliable, fault-tolerant Go applications with DBOS durable workflows. Use when adding DBOS to existing Go code, creating workflows ... | [`skills/dbos-golang/SKILL.md`](skills/dbos-golang/SKILL.md) |
+| **dbos-python** | Backend & Languages | Guide for building reliable, fault-tolerant Python applications with DBOS durable workflows. Use when adding DBOS to existing Python code, creating wo... | [`skills/dbos-python/SKILL.md`](skills/dbos-python/SKILL.md) |
+| **fastapi-pro** | Backend & Languages | Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and | [`skills/fastapi-pro/SKILL.md`](skills/fastapi-pro/SKILL.md) |
+| **fastapi-router-py** | Backend & Languages | Create FastAPI routers following established patterns with proper authentication, response models, and HTTP status codes. | [`skills/fastapi-router-py/SKILL.md`](skills/fastapi-router-py/SKILL.md) |
+| **fastapi-templates** | Backend & Languages | Create production-ready FastAPI projects with async patterns, dependency injection, and comprehensive error handling. Use when building new FastAPI ap... | [`skills/fastapi-templates/SKILL.md`](skills/fastapi-templates/SKILL.md) |
+| **golang-pro** | Backend & Languages | Master Go 1.21+ with modern patterns, advanced concurrency, | [`skills/golang-pro/SKILL.md`](skills/golang-pro/SKILL.md) |
+| **grpc-golang** | Backend & Languages | Build production-ready gRPC services in Go with mTLS, streaming, and observability. Use when designing Protobuf contracts with Buf or implementing sec... | [`skills/grpc-golang/SKILL.md`](skills/grpc-golang/SKILL.md) |
+| **laravel-expert** | Backend & Languages | Senior Laravel Engineer role for production-grade, maintainable, and idiomatic Laravel solutions. Focuses on clean architecture, security, performance... | [`skills/laravel-expert/SKILL.md`](skills/laravel-expert/SKILL.md) |
+| **laravel-security-audit** | Backend & Languages | Security auditor for Laravel applications. Analyzes code for vulnerabilities, misconfigurations, and insecure practices using OWASP standards and Lara... | [`skills/laravel-security-audit/SKILL.md`](skills/laravel-security-audit/SKILL.md) |
+| **managing-python-dependencies** | Backend & Languages | \| | [`skills/managing-python-dependencies/SKILL.md`](skills/managing-python-dependencies/SKILL.md) |
+| **n8n-code-python** | Backend & Languages | Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to unders... | [`skills/n8n-code-python/SKILL.md`](skills/n8n-code-python/SKILL.md) |
+| **nodejs-backend-patterns** | Backend & Languages | Build production-ready Node.js backend services with Express/Fastify, implementing middleware patterns, error handling, authentication, database integ... | [`skills/nodejs-backend-patterns/SKILL.md`](skills/nodejs-backend-patterns/SKILL.md) |
+| **nodejs-best-practices** | Backend & Languages | Node.js development principles and decision-making. Framework selection, async patterns, security, and architecture. Teaches thinking, not copying. | [`skills/nodejs-best-practices/SKILL.md`](skills/nodejs-best-practices/SKILL.md) |
+| **php-pro** | Backend & Languages | Write idiomatic PHP code with generators, iterators, SPL data | [`skills/php-pro/SKILL.md`](skills/php-pro/SKILL.md) |
+| **python-development-python-scaffold** | Backend & Languages | You are a Python project architecture expert specializing in scaffolding production-ready Python applications. Generate complete project structures wi... | [`skills/python-development-python-scaffold/SKILL.md`](skills/python-development-python-scaffold/SKILL.md) |
+| **python-fastapi-development** | Backend & Languages | Python FastAPI backend development with async patterns, SQLAlchemy, Pydantic, authentication, and production API patterns. | [`skills/python-fastapi-development/SKILL.md`](skills/python-fastapi-development/SKILL.md) |
+| **python-packaging** | Backend & Languages | Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python librari... | [`skills/python-packaging/SKILL.md`](skills/python-packaging/SKILL.md) |
+| **python-patterns** | Backend & Languages | Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying. | [`skills/python-patterns/SKILL.md`](skills/python-patterns/SKILL.md) |
+| **python-performance-optimization** | Backend & Languages | Profile and optimize Python code using cProfile, memory profilers, and performance best practices. Use when debugging slow Python code, optimizing bot... | [`skills/python-performance-optimization/SKILL.md`](skills/python-performance-optimization/SKILL.md) |
+| **python-pptx-generator** | Backend & Languages | Generate complete Python scripts that build polished PowerPoint decks with python-pptx and real slide content. | [`skills/python-pptx-generator/SKILL.md`](skills/python-pptx-generator/SKILL.md) |
+| **python-pro** | Backend & Languages | Master Python 3.12+ with modern features, async programming, | [`skills/python-pro/SKILL.md`](skills/python-pro/SKILL.md) |
+| **python-testing-patterns** | Backend & Languages | Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test... | [`skills/python-testing-patterns/SKILL.md`](skills/python-testing-patterns/SKILL.md) |
+| **rust-async-patterns** | Backend & Languages | Master Rust async programming with Tokio, async traits, error handling, and concurrent patterns. Use when building async Rust applications, implementi... | [`skills/rust-async-patterns/SKILL.md`](skills/rust-async-patterns/SKILL.md) |
+| **rust-pro** | Backend & Languages | Master Rust 1.75+ with modern async patterns, advanced type system | [`skills/rust-pro/SKILL.md`](skills/rust-pro/SKILL.md) |
+| **systems-programming-rust-project** | Backend & Languages | You are a Rust project architecture expert specializing in scaffolding production-ready Rust applications. Generate complete project structures with c... | [`skills/systems-programming-rust-project/SKILL.md`](skills/systems-programming-rust-project/SKILL.md) |
+| **temporal-golang-pro** | Backend & Languages | Use when building durable distributed systems with Temporal Go SDK. Covers deterministic workflow rules, mTLS worker configs, and advanced patterns. | [`skills/temporal-golang-pro/SKILL.md`](skills/temporal-golang-pro/SKILL.md) |
+| **temporal-python-pro** | Backend & Languages | Master Temporal workflow orchestration with Python SDK. Implements | [`skills/temporal-python-pro/SKILL.md`](skills/temporal-python-pro/SKILL.md) |
+| **temporal-python-testing** | Backend & Languages | Test Temporal workflows with pytest, time-skipping, and mocking strategies. Covers unit testing, integration testing, replay testing, and local develo... | [`skills/temporal-python-testing/SKILL.md`](skills/temporal-python-testing/SKILL.md) |
+| **trust-calibrator** | Backend & Languages | One sentence - what this skill does and when to invoke it | [`skills/trust-calibrator/SKILL.md`](skills/trust-calibrator/SKILL.md) |
+| **alloydb-omni-optimize** | Databases | Use these skills when you need to fine-tune the database engine settings, | [`skills/alloydb-omni-optimize/SKILL.md`](skills/alloydb-omni-optimize/SKILL.md) |
+| **alloydb-postgres-access-management** | Databases | Use these skills when you need to manage database users, inspect permissions | [`skills/alloydb-postgres-access-management/SKILL.md`](skills/alloydb-postgres-access-management/SKILL.md) |
+| **alloydb-postgres-admin** | Databases | Use these skills when you need to provision new AlloyDB clusters and | [`skills/alloydb-postgres-admin/SKILL.md`](skills/alloydb-postgres-admin/SKILL.md) |
+| **alloydb-postgres-data** | Databases | Use these skills when you need to explore the database schema, identify | [`skills/alloydb-postgres-data/SKILL.md`](skills/alloydb-postgres-data/SKILL.md) |
+| **alloydb-postgres-health** | Databases | Use these skills when you need to optimize storage, identify index issues, | [`skills/alloydb-postgres-health/SKILL.md`](skills/alloydb-postgres-health/SKILL.md) |
+| **alloydb-postgres-monitor** | Databases | Use these skills when you need to troubleshoot slow performance, analyze | [`skills/alloydb-postgres-monitor/SKILL.md`](skills/alloydb-postgres-monitor/SKILL.md) |
+| **alloydb-postgres-optimize** | Databases | Use these skills when you need to discover and manage PostgreSQL extensions | [`skills/alloydb-postgres-optimize/SKILL.md`](skills/alloydb-postgres-optimize/SKILL.md) |
+| **alloydb-postgres-replication** | Databases | Use these skills when you need to monitor replication health, manage | [`skills/alloydb-postgres-replication/SKILL.md`](skills/alloydb-postgres-replication/SKILL.md) |
+| **azure-postgres-ts** | Databases | Connect to Azure Database for PostgreSQL Flexible Server from Node.js/TypeScript using the pg (node-postgres) package. | [`skills/azure-postgres-ts/SKILL.md`](skills/azure-postgres-ts/SKILL.md) |
+| **azure-resource-manager-mysql-dotnet** | Databases | Azure MySQL Flexible Server SDK for .NET. Database management for MySQL Flexible Server deployments. | [`skills/azure-resource-manager-mysql-dotnet/SKILL.md`](skills/azure-resource-manager-mysql-dotnet/SKILL.md) |
+| **azure-resource-manager-postgresql-dotnet** | Databases | Azure PostgreSQL Flexible Server SDK for .NET. Database management for PostgreSQL Flexible Server deployments. | [`skills/azure-resource-manager-postgresql-dotnet/SKILL.md`](skills/azure-resource-manager-postgresql-dotnet/SKILL.md) |
+| **claimable-postgres** | Databases | Provision instant temporary Postgres databases via Claimable Postgres by Neon (pg.new). No login or credit card required. Use for quick Postgres envir... | [`skills/claimable-postgres/SKILL.md`](skills/claimable-postgres/SKILL.md) |
+| **cloud-sql-mysql-admin** | Databases | Use these skills when you need to provision new Cloud SQL for MySQL instances, | [`skills/cloud-sql-mysql-admin/SKILL.md`](skills/cloud-sql-mysql-admin/SKILL.md) |
+| **cloud-sql-mysql-data** | Databases | Use these skills when you need to explore your database schema, execute | [`skills/cloud-sql-mysql-data/SKILL.md`](skills/cloud-sql-mysql-data/SKILL.md) |
+| **cloud-sql-mysql-lifecycle** | Databases | Use these skills when you need to manage the durability and safety of | [`skills/cloud-sql-mysql-lifecycle/SKILL.md`](skills/cloud-sql-mysql-lifecycle/SKILL.md) |
+| **cloud-sql-mysql-monitor** | Databases | Use these skills when you need to troubleshoot slow queries, analyze | [`skills/cloud-sql-mysql-monitor/SKILL.md`](skills/cloud-sql-mysql-monitor/SKILL.md) |
+| **cloud-sql-postgres-admin** | Databases | Use these skills when you need to provision new Cloud SQL instances, | [`skills/cloud-sql-postgres-admin/SKILL.md`](skills/cloud-sql-postgres-admin/SKILL.md) |
+| **cloud-sql-postgres-data** | Databases | Use these skills when you need to explore the database structure, discover | [`skills/cloud-sql-postgres-data/SKILL.md`](skills/cloud-sql-postgres-data/SKILL.md) |
+| **cloud-sql-postgres-health** | Databases | Use these skills when you need to audit database health, identify storage | [`skills/cloud-sql-postgres-health/SKILL.md`](skills/cloud-sql-postgres-health/SKILL.md) |
+| **cloud-sql-postgres-lifecycle** | Databases | Use these skills when you need to manage the lifecycle of your instances, | [`skills/cloud-sql-postgres-lifecycle/SKILL.md`](skills/cloud-sql-postgres-lifecycle/SKILL.md) |
+| **cloud-sql-postgres-monitor** | Databases | Use these skills when you need to troubleshoot performance bottlenecks, | [`skills/cloud-sql-postgres-monitor/SKILL.md`](skills/cloud-sql-postgres-monitor/SKILL.md) |
+| **cloud-sql-postgres-replication** | Databases | Use these skills when you need to monitor replication health, manage | [`skills/cloud-sql-postgres-replication/SKILL.md`](skills/cloud-sql-postgres-replication/SKILL.md) |
+| **cloud-sql-postgres-vectorassist** | Databases | Use these skills to set up and optimize production-ready vector workloads | [`skills/cloud-sql-postgres-vectorassist/SKILL.md`](skills/cloud-sql-postgres-vectorassist/SKILL.md) |
+| **cloud-sql-postgres-view-config** | Databases | Use these skills when you need to discover and manage PostgreSQL extensions | [`skills/cloud-sql-postgres-view-config/SKILL.md`](skills/cloud-sql-postgres-view-config/SKILL.md) |
+| **dbos-typescript** | Databases | Guide for building reliable, fault-tolerant TypeScript applications with DBOS durable workflows. Use when adding DBOS to existing TypeScript code, cre... | [`skills/dbos-typescript/SKILL.md`](skills/dbos-typescript/SKILL.md) |
+| **neon-postgres** | Databases | Expert patterns for Neon serverless Postgres, branching, connection | [`skills/neon-postgres/SKILL.md`](skills/neon-postgres/SKILL.md) |
+| **perfetto-sql** | Databases | Translates natural language data intents into syntactically valid Perfetto | [`skills/perfetto-sql/SKILL.md`](skills/perfetto-sql/SKILL.md) |
+| **postgres-best-practices** | Databases | Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema des... | [`skills/postgres-best-practices/SKILL.md`](skills/postgres-best-practices/SKILL.md) |
+| **postgresql** | Databases | Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing, constraints, performance patterns, and advanced features | [`skills/postgresql/SKILL.md`](skills/postgresql/SKILL.md) |
+| **postgresql-optimization** | Databases | PostgreSQL database optimization workflow for query tuning, indexing strategies, performance analysis, and production database management. | [`skills/postgresql-optimization/SKILL.md`](skills/postgresql-optimization/SKILL.md) |
+| **sql-injection-testing** | Databases | Execute comprehensive SQL injection vulnerability assessments on web applications to identify database security flaws, demonstrate exploitation techni... | [`skills/sql-injection-testing/SKILL.md`](skills/sql-injection-testing/SKILL.md) |
+| **sqlmap-database-pentesting** | Databases | Provide systematic methodologies for automated SQL injection detection and exploitation using SQLMap. | [`skills/sqlmap-database-pentesting/SKILL.md`](skills/sqlmap-database-pentesting/SKILL.md) |
+| **address-github-comments** | DevOps & Cloud | Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI. | [`skills/address-github-comments/SKILL.md`](skills/address-github-comments/SKILL.md) |
+| **aws-cost-optimizer** | DevOps & Cloud | Comprehensive AWS cost analysis and optimization recommendations using AWS CLI and Cost Explorer | [`skills/aws-cost-optimizer/SKILL.md`](skills/aws-cost-optimizer/SKILL.md) |
+| **aws-penetration-testing** | DevOps & Cloud | Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoi... | [`skills/aws-penetration-testing/SKILL.md`](skills/aws-penetration-testing/SKILL.md) |
+| **aws-security-audit** | DevOps & Cloud | Comprehensive AWS security posture assessment using AWS CLI and security best practices | [`skills/aws-security-audit/SKILL.md`](skills/aws-security-audit/SKILL.md) |
+| **azure-mgmt-apicenter-dotnet** | DevOps & Cloud | Azure API Center SDK for .NET. Centralized API inventory management with governance, versioning, and discovery. | [`skills/azure-mgmt-apicenter-dotnet/SKILL.md`](skills/azure-mgmt-apicenter-dotnet/SKILL.md) |
+| **azure-mgmt-apicenter-py** | DevOps & Cloud | Azure API Center Management SDK for Python. Use for managing API inventory, metadata, and governance across your organization. | [`skills/azure-mgmt-apicenter-py/SKILL.md`](skills/azure-mgmt-apicenter-py/SKILL.md) |
+| **azure-mgmt-apimanagement-dotnet** | DevOps & Cloud | Azure Resource Manager SDK for API Management in .NET. | [`skills/azure-mgmt-apimanagement-dotnet/SKILL.md`](skills/azure-mgmt-apimanagement-dotnet/SKILL.md) |
+| **azure-mgmt-apimanagement-py** | DevOps & Cloud | Azure API Management SDK for Python. Use for managing APIM services, APIs, products, subscriptions, and policies. | [`skills/azure-mgmt-apimanagement-py/SKILL.md`](skills/azure-mgmt-apimanagement-py/SKILL.md) |
+| **azure-microsoft-playwright-testing-ts** | DevOps & Cloud | Run Playwright tests at scale with cloud-hosted browsers and integrated Azure portal reporting. | [`skills/azure-microsoft-playwright-testing-ts/SKILL.md`](skills/azure-microsoft-playwright-testing-ts/SKILL.md) |
+| **azure-security-keyvault-keys-dotnet** | DevOps & Cloud | Azure Key Vault Keys SDK for .NET. Client library for managing cryptographic keys in Azure Key Vault and Managed HSM. Use for key creation, rotation, ... | [`skills/azure-security-keyvault-keys-dotnet/SKILL.md`](skills/azure-security-keyvault-keys-dotnet/SKILL.md) |
+| **azure-security-keyvault-keys-java** | DevOps & Cloud | Azure Key Vault Keys Java SDK for cryptographic key management. Use when creating, managing, or using RSA/EC keys, performing encrypt/decrypt/sign/ver... | [`skills/azure-security-keyvault-keys-java/SKILL.md`](skills/azure-security-keyvault-keys-java/SKILL.md) |
+| **azure-security-keyvault-secrets-java** | DevOps & Cloud | Azure Key Vault Secrets Java SDK for secret management. Use when storing, retrieving, or managing passwords, API keys, connection strings, or other se... | [`skills/azure-security-keyvault-secrets-java/SKILL.md`](skills/azure-security-keyvault-secrets-java/SKILL.md) |
+| **docker-expert** | DevOps & Cloud | You are an advanced Docker containerization expert with comprehensive, practical knowledge of container optimization, security hardening, multi-stage ... | [`skills/docker-expert/SKILL.md`](skills/docker-expert/SKILL.md) |
+| **gcp-composer-troubleshooting** | DevOps & Cloud | Provides expert guidance for troubleshooting Cloud Composer (Apache | [`skills/gcp-composer-troubleshooting/SKILL.md`](skills/gcp-composer-troubleshooting/SKILL.md) |
+| **git-advanced-workflows** | DevOps & Cloud | Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to maintain clean history and recover from any situati... | [`skills/git-advanced-workflows/SKILL.md`](skills/git-advanced-workflows/SKILL.md) |
+| **git-commit-formatter** | DevOps & Cloud | Formats git commit messages according to Conventional Commits specification. Use this when the user asks to commit changes or write a commit message. | [`skills/git-commit-formatter/SKILL.md`](skills/git-commit-formatter/SKILL.md) |
+| **git-hooks-automation** | DevOps & Cloud | Master Git hooks setup with Husky, lint-staged, pre-commit framework, and commitlint. Automate code quality gates, formatting, linting, and commit mes... | [`skills/git-hooks-automation/SKILL.md`](skills/git-hooks-automation/SKILL.md) |
+| **git-pr-review** | DevOps & Cloud | Generate a concise and structured PR description from commit history with minimal token usage | [`skills/git-pr-review/SKILL.md`](skills/git-pr-review/SKILL.md) |
+| **git-pr-workflows-git-workflow** | DevOps & Cloud | Orchestrate a comprehensive git workflow from code review through PR creation, leveraging specialized agents for quality assurance, testing, and deplo... | [`skills/git-pr-workflows-git-workflow/SKILL.md`](skills/git-pr-workflows-git-workflow/SKILL.md) |
+| **git-pr-workflows-onboard** | DevOps & Cloud | You are an **expert onboarding specialist and knowledge transfer architect** with deep experience in remote-first organizations, technical team integr... | [`skills/git-pr-workflows-onboard/SKILL.md`](skills/git-pr-workflows-onboard/SKILL.md) |
+| **git-pr-workflows-pr-enhance** | DevOps & Cloud | You are a PR optimization expert specializing in creating high-quality pull requests that facilitate efficient code reviews. Generate comprehensive PR... | [`skills/git-pr-workflows-pr-enhance/SKILL.md`](skills/git-pr-workflows-pr-enhance/SKILL.md) |
+| **git-pushing** | DevOps & Cloud | Stage all changes, create a conventional commit, and push to the remote branch. Use when explicitly asks to push changes (\"push this\", \"commit and ... | [`skills/git-pushing/SKILL.md`](skills/git-pushing/SKILL.md) |
+| **github** | DevOps & Cloud | Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries. | [`skills/github/SKILL.md`](skills/github/SKILL.md) |
+| **github-actions-templates** | DevOps & Cloud | Create production-ready GitHub Actions workflows for automated testing, building, and deploying applications. Use when setting up CI/CD with GitHub Ac... | [`skills/github-actions-templates/SKILL.md`](skills/github-actions-templates/SKILL.md) |
+| **github-automation** | DevOps & Cloud | Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, sear... | [`skills/github-automation/SKILL.md`](skills/github-automation/SKILL.md) |
+| **github-issue-creator** | DevOps & Cloud | Turn error logs, screenshots, voice notes, and rough bug reports into crisp, developer-ready GitHub issues with repro steps, impact, and evidence. | [`skills/github-issue-creator/SKILL.md`](skills/github-issue-creator/SKILL.md) |
+| **github-workflow-automation** | DevOps & Cloud | Patterns for automating GitHub workflows with AI assistance, inspired by [Gemini CLI](https://github.com/google-gemini/gemini-cli) and modern DevOps p... | [`skills/github-workflow-automation/SKILL.md`](skills/github-workflow-automation/SKILL.md) |
+| **gitlab-automation** | DevOps & Cloud | Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools firs... | [`skills/gitlab-automation/SKILL.md`](skills/gitlab-automation/SKILL.md) |
+| **gitlab-ci-patterns** | DevOps & Cloud | Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD,... | [`skills/gitlab-ci-patterns/SKILL.md`](skills/gitlab-ci-patterns/SKILL.md) |
+| **gitops-workflow** | DevOps & Cloud | Implement GitOps workflows with ArgoCD and Flux for automated, declarative Kubernetes deployments with continuous reconciliation. Use when implementin... | [`skills/gitops-workflow/SKILL.md`](skills/gitops-workflow/SKILL.md) |
+| **odoo-docker-deployment** | DevOps & Cloud | Production-ready Docker and docker-compose setup for Odoo with PostgreSQL, persistent volumes, environment-based configuration, and Nginx reverse prox... | [`skills/odoo-docker-deployment/SKILL.md`](skills/odoo-docker-deployment/SKILL.md) |
+| **openclaw-github-repo-commander** | DevOps & Cloud | 7-stage super workflow for GitHub repo audit, cleanup, PR review, and competitor analysis | [`skills/openclaw-github-repo-commander/SKILL.md`](skills/openclaw-github-repo-commander/SKILL.md) |
+| **terraform-aws-modules** | DevOps & Cloud | Terraform module creation for AWS — reusable modules, state management, and HCL best practices. Use when building or reviewing Terraform AWS infrastru... | [`skills/terraform-aws-modules/SKILL.md`](skills/terraform-aws-modules/SKILL.md) |
+| **terraform-infrastructure** | DevOps & Cloud | Terraform infrastructure as code workflow for provisioning cloud resources, creating reusable modules, and managing infrastructure at scale. | [`skills/terraform-infrastructure/SKILL.md`](skills/terraform-infrastructure/SKILL.md) |
+| **terraform-module-library** | DevOps & Cloud | Build reusable Terraform modules for AWS, Azure, and GCP infrastructure following infrastructure-as-code best practices. Use when creating infrastruct... | [`skills/terraform-module-library/SKILL.md`](skills/terraform-module-library/SKILL.md) |
+| **terraform-skill** | DevOps & Cloud | Terraform infrastructure as code best practices | [`skills/terraform-skill/SKILL.md`](skills/terraform-skill/SKILL.md) |
+| **terraform-specialist** | DevOps & Cloud | Expert Terraform/OpenTofu specialist mastering advanced IaC | [`skills/terraform-specialist/SKILL.md`](skills/terraform-specialist/SKILL.md) |
+| **using-git-worktrees** | DevOps & Cloud | Git worktrees create isolated workspaces sharing the same repository, allowing work on multiple branches simultaneously without switching. | [`skills/using-git-worktrees/SKILL.md`](skills/using-git-worktrees/SKILL.md) |
+| **agent-orchestration-multi-agent-optimize** | General / Developer Utilities | Optimize multi-agent systems with coordinated profiling, workload distribution, and cost-aware orchestration. Use when improving agent performance, th... | [`skills/agent-orchestration-multi-agent-optimize/SKILL.md`](skills/agent-orchestration-multi-agent-optimize/SKILL.md) |
+| **android-cli** | General / Developer Utilities | Provides instructions for installing and using the `android` CLI. The `android` command-line tool is a critical tool for Android development and helps... | [`skills/android-cli/SKILL.md`](skills/android-cli/SKILL.md) |
+| **android-intent-security** | General / Developer Utilities | Best practices for Android Intent security. Use this skill when auditing | [`skills/android-intent-security/SKILL.md`](skills/android-intent-security/SKILL.md) |
+| **android-jetpack-compose-expert** | General / Developer Utilities | Expert guidance for building modern Android UIs with Jetpack Compose, covering state management, navigation, performance, and Material Design 3. | [`skills/android-jetpack-compose-expert/SKILL.md`](skills/android-jetpack-compose-expert/SKILL.md) |
+| **api-design-principles** | General / Developer Utilities | Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers. Use when designing new APIs... | [`skills/api-design-principles/SKILL.md`](skills/api-design-principles/SKILL.md) |
+| **api-documentation** | General / Developer Utilities | API documentation workflow for generating OpenAPI specs, creating developer guides, and maintaining comprehensive API documentation. | [`skills/api-documentation/SKILL.md`](skills/api-documentation/SKILL.md) |
+| **api-documentation-generator** | General / Developer Utilities | Generate comprehensive, developer-friendly API documentation from code, including endpoints, parameters, examples, and best practices | [`skills/api-documentation-generator/SKILL.md`](skills/api-documentation-generator/SKILL.md) |
+| **api-documenter** | General / Developer Utilities | Master API documentation with OpenAPI 3.1, AI-powered tools, and | [`skills/api-documenter/SKILL.md`](skills/api-documenter/SKILL.md) |
+| **api-endpoint-builder** | General / Developer Utilities | Builds production-ready REST API endpoints with validation, error handling, authentication, and documentation. Follows best practices for security and... | [`skills/api-endpoint-builder/SKILL.md`](skills/api-endpoint-builder/SKILL.md) |
+| **api-fuzzing-bug-bounty** | General / Developer Utilities | Provide comprehensive techniques for testing REST, SOAP, and GraphQL APIs during bug bounty hunting and penetration testing engagements. Covers vulner... | [`skills/api-fuzzing-bug-bounty/SKILL.md`](skills/api-fuzzing-bug-bounty/SKILL.md) |
+| **api-patterns** | General / Developer Utilities | API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination. | [`skills/api-patterns/SKILL.md`](skills/api-patterns/SKILL.md) |
+| **api-security-best-practices** | General / Developer Utilities | Implement secure API design patterns including authentication, authorization, input validation, rate limiting, and protection against common API vulne... | [`skills/api-security-best-practices/SKILL.md`](skills/api-security-best-practices/SKILL.md) |
+| **api-security-testing** | General / Developer Utilities | API security testing workflow for REST and GraphQL APIs covering authentication, authorization, rate limiting, input validation, and security best pra... | [`skills/api-security-testing/SKILL.md`](skills/api-security-testing/SKILL.md) |
+| **api-testing-observability-api-mock** | General / Developer Utilities | You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavio... | [`skills/api-testing-observability-api-mock/SKILL.md`](skills/api-testing-observability-api-mock/SKILL.md) |
+| **apify-actor-development** | General / Developer Utilities | Important: Before you begin, fill in the generatedBy property in the meta section of .actor/actor.json. Replace it with the tool and model you're curr... | [`skills/apify-actor-development/SKILL.md`](skills/apify-actor-development/SKILL.md) |
+| **apify-actorization** | General / Developer Utilities | Actorization converts existing software into reusable serverless applications compatible with the Apify platform. Actors are programs packaged as Dock... | [`skills/apify-actorization/SKILL.md`](skills/apify-actorization/SKILL.md) |
+| **apify-audience-analysis** | General / Developer Utilities | Understand audience demographics, preferences, behavior patterns, and engagement quality across Facebook, Instagram, YouTube, and TikTok. | [`skills/apify-audience-analysis/SKILL.md`](skills/apify-audience-analysis/SKILL.md) |
+| **apify-brand-reputation-monitoring** | General / Developer Utilities | Scrape reviews, ratings, and brand mentions from multiple platforms using Apify Actors. | [`skills/apify-brand-reputation-monitoring/SKILL.md`](skills/apify-brand-reputation-monitoring/SKILL.md) |
+| **apify-competitor-intelligence** | General / Developer Utilities | Analyze competitor strategies, content, pricing, ads, and market positioning across Google Maps, Booking.com, Facebook, Instagram, YouTube, and TikTok... | [`skills/apify-competitor-intelligence/SKILL.md`](skills/apify-competitor-intelligence/SKILL.md) |
+| **apify-content-analytics** | General / Developer Utilities | Track engagement metrics, measure campaign ROI, and analyze content performance across Instagram, Facebook, YouTube, and TikTok. | [`skills/apify-content-analytics/SKILL.md`](skills/apify-content-analytics/SKILL.md) |
+| **apify-ecommerce** | General / Developer Utilities | Extract product data, prices, reviews, and seller information from any e-commerce platform using Apify's E-commerce Scraping Tool. | [`skills/apify-ecommerce/SKILL.md`](skills/apify-ecommerce/SKILL.md) |
+| **apify-influencer-discovery** | General / Developer Utilities | Find and evaluate influencers for brand partnerships, verify authenticity, and track collaboration performance across Instagram, Facebook, YouTube, an... | [`skills/apify-influencer-discovery/SKILL.md`](skills/apify-influencer-discovery/SKILL.md) |
+| **apify-lead-generation** | General / Developer Utilities | Scrape leads from multiple platforms using Apify Actors. | [`skills/apify-lead-generation/SKILL.md`](skills/apify-lead-generation/SKILL.md) |
+| **apify-market-research** | General / Developer Utilities | Analyze market conditions, geographic opportunities, pricing, consumer behavior, and product validation across Google Maps, Facebook, Instagram, Booki... | [`skills/apify-market-research/SKILL.md`](skills/apify-market-research/SKILL.md) |
+| **apify-trend-analysis** | General / Developer Utilities | Discover and track emerging trends across Google Trends, Instagram, Facebook, YouTube, and TikTok to inform content strategy. | [`skills/apify-trend-analysis/SKILL.md`](skills/apify-trend-analysis/SKILL.md) |
+| **apify-ultimate-scraper** | General / Developer Utilities | AI-driven data extraction from 55+ Actors across all major platforms. This skill automatically selects the best Actor for your task. | [`skills/apify-ultimate-scraper/SKILL.md`](skills/apify-ultimate-scraper/SKILL.md) |
+| **awt-e2e-testing** | General / Developer Utilities | AI-powered E2E web testing — eyes and hands for AI coding tools. Declarative YAML scenarios, Playwright execution, visual matching (OpenCV + OCR), pla... | [`skills/awt-e2e-testing/SKILL.md`](skills/awt-e2e-testing/SKILL.md) |
+| **backtesting-frameworks** | General / Developer Utilities | Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when de... | [`skills/backtesting-frameworks/SKILL.md`](skills/backtesting-frameworks/SKILL.md) |
+| **bash-defensive-patterns** | General / Developer Utilities | Master defensive Bash programming techniques for production-grade scripts. Use when writing robust shell scripts, CI/CD pipelines, or system utilities... | [`skills/bash-defensive-patterns/SKILL.md`](skills/bash-defensive-patterns/SKILL.md) |
+| **bash-linux** | General / Developer Utilities | Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems. | [`skills/bash-linux/SKILL.md`](skills/bash-linux/SKILL.md) |
+| **bash-pro** | General / Developer Utilities | Master of defensive Bash scripting for production automation, CI/CD | [`skills/bash-pro/SKILL.md`](skills/bash-pro/SKILL.md) |
+| **bash-scripting** | General / Developer Utilities | Bash scripting workflow for creating production-ready shell scripts with defensive patterns, error handling, and testing. | [`skills/bash-scripting/SKILL.md`](skills/bash-scripting/SKILL.md) |
+| **bats-testing-patterns** | General / Developer Utilities | Master Bash Automated Testing System (Bats) for comprehensive shell script testing. Use when writing tests for shell scripts, CI/CD pipelines, or requ... | [`skills/bats-testing-patterns/SKILL.md`](skills/bats-testing-patterns/SKILL.md) |
+| **burp-suite-testing** | General / Developer Utilities | Execute comprehensive web application security testing using Burp Suite's integrated toolset, including HTTP traffic interception and modification, re... | [`skills/burp-suite-testing/SKILL.md`](skills/burp-suite-testing/SKILL.md) |
+| **camerax** | General / Developer Utilities | Provide technical guidance for Android camera development with CameraX. | [`skills/camerax/SKILL.md`](skills/camerax/SKILL.md) |
+| **cc-skill-security-review** | General / Developer Utilities | This skill ensures all code follows security best practices and identifies potential vulnerabilities. Use when implementing authentication or authoriz... | [`skills/cc-skill-security-review/SKILL.md`](skills/cc-skill-security-review/SKILL.md) |
+| **cloud-penetration-testing** | General / Developer Utilities | Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). | [`skills/cloud-penetration-testing/SKILL.md`](skills/cloud-penetration-testing/SKILL.md) |
+| **database-cloud-optimization-cost-optimize** | General / Developer Utilities | You are a cloud cost optimization expert specializing in reducing infrastructure expenses while maintaining performance and reliability. Analyze cloud... | [`skills/database-cloud-optimization-cost-optimize/SKILL.md`](skills/database-cloud-optimization-cost-optimize/SKILL.md) |
+| **database-optimizer** | General / Developer Utilities | Expert database optimizer specializing in modern performance | [`skills/database-optimizer/SKILL.md`](skills/database-optimizer/SKILL.md) |
+| **display-glasses-with-jetpack-compose-glimmer** | General / Developer Utilities | Provides guidelines for developing projected Android XR apps for display | [`skills/display-glasses-with-jetpack-compose-glimmer/SKILL.md`](skills/display-glasses-with-jetpack-compose-glimmer/SKILL.md) |
+| **dx-optimizer** | General / Developer Utilities | Developer Experience specialist. Improves tooling, setup, and | [`skills/dx-optimizer/SKILL.md`](skills/dx-optimizer/SKILL.md) |
+| **e2e-testing** | General / Developer Utilities | End-to-end testing workflow with Playwright for browser automation, visual regression, cross-browser testing, and CI/CD integration. | [`skills/e2e-testing/SKILL.md`](skills/e2e-testing/SKILL.md) |
+| **e2e-testing-patterns** | General / Developer Utilities | Master end-to-end testing with Playwright and Cypress to build reliable test suites that catch bugs, improve confidence, and enable fast deployment. U... | [`skills/e2e-testing-patterns/SKILL.md`](skills/e2e-testing-patterns/SKILL.md) |
+| **expo-api-routes** | General / Developer Utilities | Guidelines for creating API routes in Expo Router with EAS Hosting | [`skills/expo-api-routes/SKILL.md`](skills/expo-api-routes/SKILL.md) |
+| **expo-ui-jetpack-compose** | General / Developer Utilities | expo-ui-jetpack-compose | [`skills/expo-ui-jetpack-compose/SKILL.md`](skills/expo-ui-jetpack-compose/SKILL.md) |
+| **gcs-security-assessment** | General / Developer Utilities | Assesses security posture, evaluates risks, and checks SAIF compliance | [`skills/gcs-security-assessment/SKILL.md`](skills/gcs-security-assessment/SKILL.md) |
+| **gha-security-review** | General / Developer Utilities | Find exploitable vulnerabilities in GitHub Actions workflows. Every finding MUST include a concrete exploitation scenario — if you can't build the att... | [`skills/gha-security-review/SKILL.md`](skills/gha-security-review/SKILL.md) |
+| **graphql** | General / Developer Utilities | GraphQL gives clients exactly the data they need - no more, no | [`skills/graphql/SKILL.md`](skills/graphql/SKILL.md) |
+| **graphql-architect** | General / Developer Utilities | Master modern GraphQL with federation, performance optimization, | [`skills/graphql-architect/SKILL.md`](skills/graphql-architect/SKILL.md) |
+| **idor-testing** | General / Developer Utilities | Provide systematic methodologies for identifying and exploiting Insecure Direct Object Reference (IDOR) vulnerabilities in web applications. | [`skills/idor-testing/SKILL.md`](skills/idor-testing/SKILL.md) |
+| **javascript-testing-patterns** | General / Developer Utilities | Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mock... | [`skills/javascript-testing-patterns/SKILL.md`](skills/javascript-testing-patterns/SKILL.md) |
+| **javascript-typescript-typescript-scaffold** | General / Developer Utilities | You are a TypeScript project architecture expert specializing in scaffolding production-ready Node.js and frontend applications. Generate complete pro... | [`skills/javascript-typescript-typescript-scaffold/SKILL.md`](skills/javascript-typescript-typescript-scaffold/SKILL.md) |
+| **k6-load-testing** | General / Developer Utilities | Comprehensive k6 load testing skill for API, browser, and scalability testing. Write realistic load scenarios, analyze results, and integrate with CI/... | [`skills/k6-load-testing/SKILL.md`](skills/k6-load-testing/SKILL.md) |
+| **k8s-security-policies** | General / Developer Utilities | Implement Kubernetes security policies including NetworkPolicy, PodSecurityPolicy, and RBAC for production-grade security. Use when securing Kubernete... | [`skills/k8s-security-policies/SKILL.md`](skills/k8s-security-policies/SKILL.md) |
+| **linkedin-profile-optimizer** | General / Developer Utilities | High-intent expert for LinkedIn profile checks, authority building, and SEO optimization. Invoke to audit, rewrite, and enhance profiles for top 1% po... | [`skills/linkedin-profile-optimizer/SKILL.md`](skills/linkedin-profile-optimizer/SKILL.md) |
+| **migrate-xml-views-to-jetpack-compose** | General / Developer Utilities | Provides a structured workflow for migrating an Android XML View to Jetpack | [`skills/migrate-xml-views-to-jetpack-compose/SKILL.md`](skills/migrate-xml-views-to-jetpack-compose/SKILL.md) |
+| **mobile-security-coder** | General / Developer Utilities | Expert in secure mobile coding practices specializing in input | [`skills/mobile-security-coder/SKILL.md`](skills/mobile-security-coder/SKILL.md) |
+| **moodle-external-api-development** | General / Developer Utilities | This skill guides you through creating custom external web service APIs for Moodle LMS, following Moodle's external API framework and coding standards... | [`skills/moodle-external-api-development/SKILL.md`](skills/moodle-external-api-development/SKILL.md) |
+| **odoo-inventory-optimizer** | General / Developer Utilities | Expert guide for Odoo Inventory: stock valuation (FIFO/AVCO), reordering rules, putaway strategies, routes, and multi-warehouse configuration. | [`skills/odoo-inventory-optimizer/SKILL.md`](skills/odoo-inventory-optimizer/SKILL.md) |
+| **odoo-rpc-api** | General / Developer Utilities | Expert on Odoo's external JSON-RPC and XML-RPC APIs. Covers authentication, model calls, record CRUD, and real-world integration examples in Python, J... | [`skills/odoo-rpc-api/SKILL.md`](skills/odoo-rpc-api/SKILL.md) |
+| **odoo-security-rules** | General / Developer Utilities | Expert in Odoo access control: ir.model.access.csv, record rules (ir.rule), groups, and multi-company security patterns. | [`skills/odoo-security-rules/SKILL.md`](skills/odoo-security-rules/SKILL.md) |
+| **openapi-spec-generation** | General / Developer Utilities | Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generati... | [`skills/openapi-spec-generation/SKILL.md`](skills/openapi-spec-generation/SKILL.md) |
+| **perfetto-trace-analysis** | General / Developer Utilities | Analyzes Perfetto traces to find the root cause of latency, memory, or | [`skills/perfetto-trace-analysis/SKILL.md`](skills/perfetto-trace-analysis/SKILL.md) |
+| **performance-optimizer** | General / Developer Utilities | Identifies and fixes performance bottlenecks in code, databases, and APIs. Measures before and after to prove improvements. | [`skills/performance-optimizer/SKILL.md`](skills/performance-optimizer/SKILL.md) |
+| **performance-testing-review-multi-agent-review** | General / Developer Utilities | Use when working with performance testing review multi agent review | [`skills/performance-testing-review-multi-agent-review/SKILL.md`](skills/performance-testing-review-multi-agent-review/SKILL.md) |
+| **screen-reader-testing** | General / Developer Utilities | Test web applications with screen readers including VoiceOver, NVDA, and JAWS. Use when validating screen reader compatibility, debugging accessibilit... | [`skills/screen-reader-testing/SKILL.md`](skills/screen-reader-testing/SKILL.md) |
+| **security-audit** | General / Developer Utilities | Comprehensive security auditing workflow covering web application testing, API security, penetration testing, vulnerability scanning, and security har... | [`skills/security-audit/SKILL.md`](skills/security-audit/SKILL.md) |
+| **security-auditor** | General / Developer Utilities | Expert security auditor specializing in DevSecOps, comprehensive | [`skills/security-auditor/SKILL.md`](skills/security-auditor/SKILL.md) |
+| **security-bluebook-builder** | General / Developer Utilities | Build a minimal but real security policy for sensitive apps. The output is a single, coherent Blue Book document using MUST/SHOULD/CAN language, with ... | [`skills/security-bluebook-builder/SKILL.md`](skills/security-bluebook-builder/SKILL.md) |
+| **security-compliance-compliance-check** | General / Developer Utilities | You are a compliance expert specializing in regulatory requirements for software systems including GDPR, HIPAA, SOC2, PCI-DSS, and other industry stan... | [`skills/security-compliance-compliance-check/SKILL.md`](skills/security-compliance-compliance-check/SKILL.md) |
+| **security-requirement-extraction** | General / Developer Utilities | Derive security requirements from threat models and business context. Use when translating threats into actionable requirements, creating security use... | [`skills/security-requirement-extraction/SKILL.md`](skills/security-requirement-extraction/SKILL.md) |
+| **security-scanning-security-dependencies** | General / Developer Utilities | You are a security expert specializing in dependency vulnerability analysis, SBOM generation, and supply chain security. Scan project dependencies acr... | [`skills/security-scanning-security-dependencies/SKILL.md`](skills/security-scanning-security-dependencies/SKILL.md) |
+| **security-scanning-security-hardening** | General / Developer Utilities | Coordinate multi-layer security scanning and hardening across application, infrastructure, and compliance controls. | [`skills/security-scanning-security-hardening/SKILL.md`](skills/security-scanning-security-hardening/SKILL.md) |
+| **security-scanning-security-sast** | General / Developer Utilities | Static Application Security Testing (SAST) for code vulnerability | [`skills/security-scanning-security-sast/SKILL.md`](skills/security-scanning-security-sast/SKILL.md) |
+| **skill-optimizer** | General / Developer Utilities | Diagnose and optimize Agent Skills (SKILL.md) with real session data and research-backed static analysis. Works with Claude Code, Codex, and any Agent... | [`skills/skill-optimizer/SKILL.md`](skills/skill-optimizer/SKILL.md) |
+| **smtp-penetration-testing** | General / Developer Utilities | Conduct comprehensive security assessments of SMTP (Simple Mail Transfer Protocol) servers to identify vulnerabilities including open relays, user enu... | [`skills/smtp-penetration-testing/SKILL.md`](skills/smtp-penetration-testing/SKILL.md) |
+| **solidity-security** | General / Developer Utilities | Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contrac... | [`skills/solidity-security/SKILL.md`](skills/solidity-security/SKILL.md) |
+| **ssh-penetration-testing** | General / Developer Utilities | Conduct comprehensive SSH security assessments including enumeration, credential attacks, vulnerability exploitation, tunneling techniques, and post-e... | [`skills/ssh-penetration-testing/SKILL.md`](skills/ssh-penetration-testing/SKILL.md) |
+| **testing-patterns** | General / Developer Utilities | Jest testing patterns, factory functions, mocking strategies, and TDD workflow. Use when writing unit tests, creating test factories, or following TDD... | [`skills/testing-patterns/SKILL.md`](skills/testing-patterns/SKILL.md) |
+| **testing-qa** | General / Developer Utilities | Comprehensive testing and QA workflow covering unit testing, integration testing, E2E testing, browser automation, and quality assurance. | [`skills/testing-qa/SKILL.md`](skills/testing-qa/SKILL.md) |
+| **testing-setup** | General / Developer Utilities | Analyze and create a testing strategy for native Android apps - install | [`skills/testing-setup/SKILL.md`](skills/testing-setup/SKILL.md) |
+| **tmux** | General / Developer Utilities | Expert tmux session, window, and pane management for terminal multiplexing, persistent remote workflows, and shell scripting automation. | [`skills/tmux/SKILL.md`](skills/tmux/SKILL.md) |
+| **typescript-advanced-types** | General / Developer Utilities | Master TypeScript's advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-s... | [`skills/typescript-advanced-types/SKILL.md`](skills/typescript-advanced-types/SKILL.md) |
+| **typescript-expert** | General / Developer Utilities | TypeScript and JavaScript expert with deep knowledge of type-level programming, performance optimization, monorepo management, migration strategies, a... | [`skills/typescript-expert/SKILL.md`](skills/typescript-expert/SKILL.md) |
+| **typescript-pro** | General / Developer Utilities | Master TypeScript with advanced types, generics, and strict type | [`skills/typescript-pro/SKILL.md`](skills/typescript-pro/SKILL.md) |
+| **unit-testing-test-generate** | General / Developer Utilities | Generate comprehensive, maintainable unit tests across languages with strong coverage and edge case focus. | [`skills/unit-testing-test-generate/SKILL.md`](skills/unit-testing-test-generate/SKILL.md) |
+| **wear-compose-m3** | General / Developer Utilities | Expert guidance for working with Wear OS Compose Material3. Use this | [`skills/wear-compose-m3/SKILL.md`](skills/wear-compose-m3/SKILL.md) |
+| **web-security-testing** | General / Developer Utilities | Web application security testing workflow for OWASP Top 10 vulnerabilities including injection, XSS, authentication flaws, and access control issues. | [`skills/web-security-testing/SKILL.md`](skills/web-security-testing/SKILL.md) |
+| **web3-testing** | General / Developer Utilities | Test smart contracts comprehensively using Hardhat and Foundry with unit tests, integration tests, and mainnet forking. Use when testing Solidity cont... | [`skills/web3-testing/SKILL.md`](skills/web3-testing/SKILL.md) |
+| **webapp-testing** | General / Developer Utilities | To test local web applications, write native Python Playwright scripts. | [`skills/webapp-testing/SKILL.md`](skills/webapp-testing/SKILL.md) |
+| **whatsapp-cloud-api** | General / Developer Utilities | Integracao com WhatsApp Business Cloud API (Meta). Mensagens, templates, webhooks HMAC-SHA256, automacao de atendimento. Boilerplates Node.js e Python... | [`skills/whatsapp-cloud-api/SKILL.md`](skills/whatsapp-cloud-api/SKILL.md) |
+| **wordpress-penetration-testing** | General / Developer Utilities | Assess WordPress installations for common vulnerabilities and WordPress 7.0 attack surfaces. | [`skills/wordpress-penetration-testing/SKILL.md`](skills/wordpress-penetration-testing/SKILL.md) |
+| **zapier-make-patterns** | General / Developer Utilities | No-code automation democratizes workflow building. Zapier and Make | [`skills/zapier-make-patterns/SKILL.md`](skills/zapier-make-patterns/SKILL.md) |
+| **zod-validation-expert** | General / Developer Utilities | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, ... | [`skills/zod-validation-expert/SKILL.md`](skills/zod-validation-expert/SKILL.md) |
+| **ai-seo** | SEO & Web Optimization | Optimize content for AI search and LLM citations across AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and similar systems. Use when improving AI ... | [`skills/ai-seo/SKILL.md`](skills/ai-seo/SKILL.md) |
+| **clarvia-aeo-check** | SEO & Web Optimization | Score any MCP server, API, or CLI for agent-readiness using Clarvia AEO (Agent Experience Optimization). Search 15,400+ indexed tools before adding th... | [`skills/clarvia-aeo-check/SKILL.md`](skills/clarvia-aeo-check/SKILL.md) |
+| **geo-fundamentals** | SEO & Web Optimization | Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity). | [`skills/geo-fundamentals/SKILL.md`](skills/geo-fundamentals/SKILL.md) |
+| **geoffrey-hinton** | SEO & Web Optimization | Agente que simula Geoffrey Hinton — Godfather of Deep Learning, Prêmio Turing 2018, criador do backpropagation e das Deep Belief Networks. | [`skills/geoffrey-hinton/SKILL.md`](skills/geoffrey-hinton/SKILL.md) |
+| **local-legal-seo-audit** | SEO & Web Optimization | Audit and improve local SEO for law firms, attorneys, forensic experts and legal/professional services sites with local presence, focusing on GBP, dir... | [`skills/local-legal-seo-audit/SKILL.md`](skills/local-legal-seo-audit/SKILL.md) |
+| **programmatic-seo** | SEO & Web Optimization | Design and evaluate programmatic SEO strategies for creating SEO-driven pages at scale using templates and structured data. | [`skills/programmatic-seo/SKILL.md`](skills/programmatic-seo/SKILL.md) |
+| **seo** | SEO & Web Optimization | Run a broad SEO audit across technical SEO, on-page SEO, schema, sitemaps, content quality, AI search readiness, and GEO. Use as the umbrella skill wh... | [`skills/seo/SKILL.md`](skills/seo/SKILL.md) |
+| **seo-aeo-blog-writer** | SEO & Web Optimization | Writes long-form blog posts with TL;DR block, definition sentence, comparison table, and 5-question FAQ for SEO ranking and AEO citation. Activate whe... | [`skills/seo-aeo-blog-writer/SKILL.md`](skills/seo-aeo-blog-writer/SKILL.md) |
+| **seo-aeo-content-cluster** | SEO & Web Optimization | Builds a topical authority map with a pillar page, prioritised cluster articles, content types, internal link map, and content gap analysis. Activate ... | [`skills/seo-aeo-content-cluster/SKILL.md`](skills/seo-aeo-content-cluster/SKILL.md) |
+| **seo-aeo-content-quality-auditor** | SEO & Web Optimization | Audits content for SEO and AEO performance with scored reports, severity-ranked fix lists, and projected scores after fixes. Activate when the user wa... | [`skills/seo-aeo-content-quality-auditor/SKILL.md`](skills/seo-aeo-content-quality-auditor/SKILL.md) |
+| **seo-aeo-internal-linking** | SEO & Web Optimization | Maps internal link opportunities between pages with anchor text, placement instructions, orphan page detection, and cannibalization checks. Activate w... | [`skills/seo-aeo-internal-linking/SKILL.md`](skills/seo-aeo-internal-linking/SKILL.md) |
+| **seo-aeo-keyword-research** | SEO & Web Optimization | Researches and prioritises SEO keywords with AEO question queries, difficulty tiers, cannibalization checks, and a content map. Activate when the user... | [`skills/seo-aeo-keyword-research/SKILL.md`](skills/seo-aeo-keyword-research/SKILL.md) |
+| **seo-aeo-landing-page-writer** | SEO & Web Optimization | Writes complete, structured landing pages optimized for SEO ranking, AEO citation, and visitor conversion. Activate when the user wants to write or ge... | [`skills/seo-aeo-landing-page-writer/SKILL.md`](skills/seo-aeo-landing-page-writer/SKILL.md) |
+| **seo-aeo-meta-description-generator** | SEO & Web Optimization | Writes 3 title tag variants and 3 meta description variants per page with SERP preview, OG tags, and Twitter Card tags. Activate when the user wants t... | [`skills/seo-aeo-meta-description-generator/SKILL.md`](skills/seo-aeo-meta-description-generator/SKILL.md) |
+| **seo-aeo-schema-generator** | SEO & Web Optimization | Generates valid JSON-LD structured data for 10 schema types with rich result eligibility validation and implementation-ready script blocks. Activate w... | [`skills/seo-aeo-schema-generator/SKILL.md`](skills/seo-aeo-schema-generator/SKILL.md) |
+| **seo-audit** | SEO & Web Optimization | Diagnose and audit SEO issues affecting crawlability, indexation, rankings, and organic performance. | [`skills/seo-audit/SKILL.md`](skills/seo-audit/SKILL.md) |
+| **seo-authority-builder** | SEO & Web Optimization | Analyzes content for E-E-A-T signals and suggests improvements to | [`skills/seo-authority-builder/SKILL.md`](skills/seo-authority-builder/SKILL.md) |
+| **seo-cannibalization-detector** | SEO & Web Optimization | Analyzes multiple provided pages to identify keyword overlap and | [`skills/seo-cannibalization-detector/SKILL.md`](skills/seo-cannibalization-detector/SKILL.md) |
+| **seo-competitor-pages** | SEO & Web Optimization | > | [`skills/seo-competitor-pages/SKILL.md`](skills/seo-competitor-pages/SKILL.md) |
+| **seo-content** | SEO & Web Optimization | > | [`skills/seo-content/SKILL.md`](skills/seo-content/SKILL.md) |
+| **seo-content-auditor** | SEO & Web Optimization | Analyzes provided content for quality, E-E-A-T signals, and SEO | [`skills/seo-content-auditor/SKILL.md`](skills/seo-content-auditor/SKILL.md) |
+| **seo-content-planner** | SEO & Web Optimization | Creates comprehensive content outlines and topic clusters for SEO. | [`skills/seo-content-planner/SKILL.md`](skills/seo-content-planner/SKILL.md) |
+| **seo-content-refresher** | SEO & Web Optimization | Identifies outdated elements in provided content and suggests | [`skills/seo-content-refresher/SKILL.md`](skills/seo-content-refresher/SKILL.md) |
+| **seo-content-writer** | SEO & Web Optimization | Writes SEO-optimized content based on provided keywords and topic | [`skills/seo-content-writer/SKILL.md`](skills/seo-content-writer/SKILL.md) |
+| **seo-dataforseo** | SEO & Web Optimization | Use DataForSEO for live SERPs, keyword metrics, backlinks, competitor analysis, on-page checks, and AI visibility data. Trigger when the user needs re... | [`skills/seo-dataforseo/SKILL.md`](skills/seo-dataforseo/SKILL.md) |
+| **seo-forensic-incident-response** | SEO & Web Optimization | Investigate sudden drops in organic traffic or rankings and run a structured forensic SEO incident response with triage, root-cause analysis and recov... | [`skills/seo-forensic-incident-response/SKILL.md`](skills/seo-forensic-incident-response/SKILL.md) |
+| **seo-fundamentals** | SEO & Web Optimization | Core principles of SEO including E-E-A-T, Core Web Vitals, technical foundations, content quality, and how modern search engines evaluate pages. | [`skills/seo-fundamentals/SKILL.md`](skills/seo-fundamentals/SKILL.md) |
+| **seo-geo** | SEO & Web Optimization | Optimize content for AI Overviews, ChatGPT, Perplexity, and other AI search systems. Use when improving GEO, AI citations, llms.txt readiness, crawler... | [`skills/seo-geo/SKILL.md`](skills/seo-geo/SKILL.md) |
+| **seo-hreflang** | SEO & Web Optimization | > | [`skills/seo-hreflang/SKILL.md`](skills/seo-hreflang/SKILL.md) |
+| **seo-image-gen** | SEO & Web Optimization | Generate SEO-focused images such as OG cards, hero images, schema assets, product visuals, and infographics. Use when image generation is part of an S... | [`skills/seo-image-gen/SKILL.md`](skills/seo-image-gen/SKILL.md) |
+| **seo-images** | SEO & Web Optimization | > | [`skills/seo-images/SKILL.md`](skills/seo-images/SKILL.md) |
+| **seo-keyword-strategist** | SEO & Web Optimization | Analyzes keyword usage in provided content, calculates density, | [`skills/seo-keyword-strategist/SKILL.md`](skills/seo-keyword-strategist/SKILL.md) |
+| **seo-meta-optimizer** | SEO & Web Optimization | Creates optimized meta titles, descriptions, and URL suggestions | [`skills/seo-meta-optimizer/SKILL.md`](skills/seo-meta-optimizer/SKILL.md) |
+| **seo-page** | SEO & Web Optimization | > | [`skills/seo-page/SKILL.md`](skills/seo-page/SKILL.md) |
+| **seo-plan** | SEO & Web Optimization | > | [`skills/seo-plan/SKILL.md`](skills/seo-plan/SKILL.md) |
+| **seo-programmatic** | SEO & Web Optimization | Plan and audit programmatic SEO pages generated at scale from structured data. Use when designing templates, URL systems, internal linking, quality ga... | [`skills/seo-programmatic/SKILL.md`](skills/seo-programmatic/SKILL.md) |
+| **seo-schema** | SEO & Web Optimization | > | [`skills/seo-schema/SKILL.md`](skills/seo-schema/SKILL.md) |
+| **seo-sitemap** | SEO & Web Optimization | > | [`skills/seo-sitemap/SKILL.md`](skills/seo-sitemap/SKILL.md) |
+| **seo-snippet-hunter** | SEO & Web Optimization | Formats content to be eligible for featured snippets and SERP | [`skills/seo-snippet-hunter/SKILL.md`](skills/seo-snippet-hunter/SKILL.md) |
+| **seo-structure-architect** | SEO & Web Optimization | Analyzes and optimizes content structure including header | [`skills/seo-structure-architect/SKILL.md`](skills/seo-structure-architect/SKILL.md) |
+| **seo-technical** | SEO & Web Optimization | Audit technical SEO across crawlability, indexability, security, URLs, mobile, Core Web Vitals, structured data, JavaScript rendering, and related pla... | [`skills/seo-technical/SKILL.md`](skills/seo-technical/SKILL.md) |
+| **social-post-writer-seo** | SEO & Web Optimization | Social Media Strategist and Content Writer. Creates clear, engaging social media posts for Instagram, LinkedIn, and Facebook. | [`skills/social-post-writer-seo/SKILL.md`](skills/social-post-writer-seo/SKILL.md) |
+| **threejs-geometry** | SEO & Web Optimization | Three.js geometry creation - built-in shapes, BufferGeometry, custom geometry, instancing. Use when creating 3D shapes, working with vertices, buildin... | [`skills/threejs-geometry/SKILL.md`](skills/threejs-geometry/SKILL.md) |
+| **wordpress-centric-high-seo-optimized-blogwriting-skill** | SEO & Web Optimization | Create long-form, high-quality, SEO-optimized blog posts ready for WordPress with truth boxes and FAQ schema. | [`skills/wordpress-centric-high-seo-optimized-blogwriting-skill/SKILL.md`](skills/wordpress-centric-high-seo-optimized-blogwriting-skill/SKILL.md) |
+| **astro** | Web & Frontend | Build content-focused websites with Astro — zero JS by default, islands architecture, multi-framework components, and Markdown/MDX support. | [`skills/astro/SKILL.md`](skills/astro/SKILL.md) |
+| **astropy** | Web & Frontend | Astropy is the core Python package for astronomy, providing essential functionality for astronomical research and data analysis. | [`skills/astropy/SKILL.md`](skills/astropy/SKILL.md) |
+| **fp-react** | Web & Frontend | Practical patterns for using fp-ts with React - hooks, state, forms, data fetching. Works with React 18/19, Next.js 14/15. | [`skills/fp-react/SKILL.md`](skills/fp-react/SKILL.md) |
+| **fp-ts-react** | Web & Frontend | Practical patterns for using fp-ts with React - hooks, state, forms, data fetching. Use when building React apps with functional programming patterns.... | [`skills/fp-ts-react/SKILL.md`](skills/fp-ts-react/SKILL.md) |
+| **frontend-api-integration-patterns** | Web & Frontend | Production-ready patterns for integrating frontend applications with backend APIs, including race condition handling, request cancellation, retry stra... | [`skills/frontend-api-integration-patterns/SKILL.md`](skills/frontend-api-integration-patterns/SKILL.md) |
+| **frontend-mobile-security-xss-scan** | Web & Frontend | You are a frontend security specialist focusing on Cross-Site Scripting (XSS) vulnerability detection and prevention. Analyze React, Vue, Angular, and... | [`skills/frontend-mobile-security-xss-scan/SKILL.md`](skills/frontend-mobile-security-xss-scan/SKILL.md) |
+| **frontend-security-coder** | Web & Frontend | Expert in secure frontend coding practices specializing in XSS | [`skills/frontend-security-coder/SKILL.md`](skills/frontend-security-coder/SKILL.md) |
+| **html-injection-testing** | Web & Frontend | Identify and exploit HTML injection vulnerabilities that allow attackers to inject malicious HTML content into web applications. This vulnerability en... | [`skills/html-injection-testing/SKILL.md`](skills/html-injection-testing/SKILL.md) |
+| **nextjs-app-router-patterns** | Web & Frontend | Master Next.js 14+ App Router with Server Components, streaming, parallel routes, and advanced data fetching. Use when building Next.js applications, ... | [`skills/nextjs-app-router-patterns/SKILL.md`](skills/nextjs-app-router-patterns/SKILL.md) |
+| **nextjs-best-practices** | Web & Frontend | Next.js App Router principles. Server Components, data fetching, routing patterns. | [`skills/nextjs-best-practices/SKILL.md`](skills/nextjs-best-practices/SKILL.md) |
+| **nextjs-supabase-auth** | Web & Frontend | Expert integration of Supabase Auth with Next.js App Router | [`skills/nextjs-supabase-auth/SKILL.md`](skills/nextjs-supabase-auth/SKILL.md) |
+| **react-best-practices** | Web & Frontend | Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Use when writing new React components or Next.j... | [`skills/react-best-practices/SKILL.md`](skills/react-best-practices/SKILL.md) |
+| **react-component-performance** | Web & Frontend | Diagnose slow React components and suggest targeted performance fixes. | [`skills/react-component-performance/SKILL.md`](skills/react-component-performance/SKILL.md) |
+| **react-flow-architect** | Web & Frontend | Build production-ready ReactFlow applications with hierarchical navigation, performance optimization, and advanced state management. | [`skills/react-flow-architect/SKILL.md`](skills/react-flow-architect/SKILL.md) |
+| **react-flow-node-ts** | Web & Frontend | Create React Flow node components following established patterns with proper TypeScript types and store integration. | [`skills/react-flow-node-ts/SKILL.md`](skills/react-flow-node-ts/SKILL.md) |
+| **react-modernization** | Web & Frontend | Upgrade React applications to latest versions, migrate from class components to hooks, and adopt concurrent features. Use when modernizing React codeb... | [`skills/react-modernization/SKILL.md`](skills/react-modernization/SKILL.md) |
+| **react-native-architecture** | Web & Frontend | Build production React Native apps with Expo, navigation, native modules, offline sync, and cross-platform patterns. Use when developing mobile apps, ... | [`skills/react-native-architecture/SKILL.md`](skills/react-native-architecture/SKILL.md) |
+| **react-nextjs-development** | Web & Frontend | React and Next.js 14+ application development with App Router, Server Components, TypeScript, Tailwind CSS, and modern frontend patterns. | [`skills/react-nextjs-development/SKILL.md`](skills/react-nextjs-development/SKILL.md) |
+| **react-patterns** | Web & Frontend | Modern React patterns and principles. Hooks, composition, performance, TypeScript best practices. | [`skills/react-patterns/SKILL.md`](skills/react-patterns/SKILL.md) |
+| **react-state-management** | Web & Frontend | Master modern React state management with Redux Toolkit, Zustand, Jotai, and React Query. Use when setting up global state, managing server state, or ... | [`skills/react-state-management/SKILL.md`](skills/react-state-management/SKILL.md) |
+| **react-ui-patterns** | Web & Frontend | Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or managing UI s... | [`skills/react-ui-patterns/SKILL.md`](skills/react-ui-patterns/SKILL.md) |
+| **sveltekit** | Web & Frontend | Build full-stack web applications with SvelteKit — file-based routing, SSR, SSG, API routes, and form actions in one framework. | [`skills/sveltekit/SKILL.md`](skills/sveltekit/SKILL.md) |
+
+
+---
+
+## 🛡️ Safety & Quality
 
 - **Read-Only Database Access**: For database MCP connections (like MySQL/PostgreSQL), always use read-only credentials. Never use admin or root users in your configurations.
 - **Verification First**: Always review the contents of `SKILL.md` and related scripts before installing a skill in a production environment.
-- **Quality Standards**: Before contributing a new skill, review the [Skill Quality Checklist](docs/skill-quality-checklist.md).
+- **Quality Checklist**: Contributors must follow our [Skill Quality Checklist](docs/skill-quality-checklist.md) before submitting.
 - For security vulnerability reporting, read [SECURITY.md](SECURITY.md).
 
 ---
 
-## 🤝 Contributing
+## 🤝 How to Contribute
 
-Contributions to improve and expand these skills are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide before opening a Pull Request. All contributions are credited under the **Taghi Molavi Antigravity Ecosystem**.
+Contributions to improve and expand these skills are welcome! 
+- Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide before opening a Pull Request.
+- Follow the `.skill` YAML frontmatter format for new submissions.
+- All contributions are credited under the **Taghi Molavi Antigravity Ecosystem**.
 
 ---
 
