@@ -106,7 +106,7 @@ const res = await fetch('https://api.example.com/data', {
 
 Ready to submit? Follow these steps:
 
-1. **Fork the Repository**: Create a fork of [tmolavi/antigravity-awesome-skills](https://github.com/tmolavi/antigravity-awesome-skills).
+1. **Fork the Repository**: Create a fork of [tmolavi/mcp-agent-skills-hub](https://github.com/tmolavi/mcp-agent-skills-hub).
 2. **Create a Branch**: Create a new branch for your skill (e.g., `feature/add-my-skill`).
 3. **Check for Duplicates**: Ensure a similar skill does not already exist in the `skills/` directory.
 4. **Add the Folder & SKILL.md**:

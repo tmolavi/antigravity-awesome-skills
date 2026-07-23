@@ -25,7 +25,7 @@ Place the required skills directly in your project root under the `.agents/skill
 
 ```bash
 mkdir -p .agents/skills/
-cp -r /path/to/antigravity-awesome-skills/skills/<skill-folder> .agents/skills/
+cp -r /path/to/mcp-agent-skills-hub/skills/<skill-folder> .agents/skills/
 ```
 
 ### Option B: Global System-Wide Installation
@@ -34,14 +34,14 @@ For global access, copy the skills into the user-level configuration path for yo
 
 - **Google Antigravity** (standard path — verify with your installed version):
   ```bash
-  cp -r /path/to/antigravity-awesome-skills/skills/* ~/.gemini/config/skills/
+  cp -r /path/to/mcp-agent-skills-hub/skills/* ~/.gemini/config/skills/
   ```
 
 - **ChatGPT Codex / Cursor / Claude** (standard paths — verify with your installed version):
   ```bash
   # Codex: ~/.codex/skills/
   # Claude: ~/.claude/skills/
-  cp -r /path/to/antigravity-awesome-skills/skills/* ~/.codex/skills/
+  cp -r /path/to/mcp-agent-skills-hub/skills/* ~/.codex/skills/
   ```
 
 ---

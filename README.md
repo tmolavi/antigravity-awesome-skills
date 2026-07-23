@@ -1,10 +1,10 @@
 # Molavi Agent Skills: Curated Skills for Antigravity, Cursor, Codex & Claude
 
-Maintained by [Taghi Molavi](https://molavi.pro) · [GitHub](https://github.com/tmolavi/antigravity-awesome-skills)
+Maintained by [Taghi Molavi](https://molavi.pro) · [GitHub](https://github.com/tmolavi/mcp-agent-skills-hub)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/tmolavi/antigravity-awesome-skills.svg?style=social)](https://github.com/tmolavi/antigravity-awesome-skills/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/tmolavi/mcp-agent-skills-hub.svg?style=social)](https://github.com/tmolavi/mcp-agent-skills-hub/stargazers)
 
 A curated, practical collection of agent skills and Model Context Protocol (MCP) server setups designed for real-world web, database, SEO, and DevOps work.
 
@@ -40,7 +40,7 @@ To install these skills locally in your project workspace:
    ```
 2. **Copy the desired skill folder** into it:
    ```bash
-   cp -r /path/to/antigravity-awesome-skills/skills/<skill-name> .agents/skills/
+   cp -r /path/to/mcp-agent-skills-hub/skills/<skill-name> .agents/skills/
    ```
 3. Your AI agent (e.g., Antigravity, Cursor) will automatically discover and load the rules in `SKILL.md` when it matches the context.
 
